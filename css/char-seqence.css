@@ -1,0 +1,54 @@
+.character-gallery {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+  margin-top: 1.5rem;
+}
+
+.character-card {
+  background: #fdfdfd;
+  border: 1px solid #eee;
+  border-radius: 8px;
+  padding: 1.5rem;
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+}
+
+.character-assets {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 1rem;
+  align-items: center;
+}
+
+.character-description {
+  flex: 1;
+}
+
+.character-description h3 {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: var(--color-text-dark);
+  margin-bottom: 1rem;
+  text-align: left;
+}
+
+.character-description p {
+  font-size: 1rem;
+  line-height: 1.7;
+  text-align: justify;
+}
+
+.character-assets img {
+  max-width: 100%;
+  height: auto;
+  background: #f4f4f4;
+  border-radius: 4px;
+}
+
+.character-assets .sequence-asset {
+  grid-column: 1 / -1; /* Span full width */
+  background: #e9e9e9;
+}
