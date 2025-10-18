@@ -74,4 +74,30 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     }
   }
+
+  // Video controls logic
+  const video = document.getElementById("cover-video");
+  const videoMuteButton = document.getElementById("videoMuteButton");
+  const videoReplayButton = document.getElementById("videoReplayButton");
+
+  if (video && videoMuteButton) {
+    // Set initial button state on page load
+    const updateMuteButton = () => {
+      videoMuteButton.classList.toggle("muted", video.muted);
+      videoMuteButton.title = video.muted ? "Unmute" : "Mute";
+    };
+    updateMuteButton();
+
+    videoMuteButton.addEventListener("click", () => {
+      video.muted = !video.muted;
+      updateMuteButton();
+    });
+  }
+
+  if (video && videoReplayButton) {
+    videoReplayButton.addEventListener("click", () => {
+      video.currentTime = 0;
+      video.play();
+    });
+  }
 });
