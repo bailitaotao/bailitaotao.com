@@ -28,6 +28,7 @@ body {
   line-height: 1.6;
   background: #fff;
   color: var(--color-text-dark);
+  overflow-x: hidden;
 }
 
 /* Header */
