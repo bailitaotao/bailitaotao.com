@@ -1,12 +1,11 @@
 <!DOCTYPE html>
-<html lang="en" data-game-id=
-"verdant-veil">
+<html lang="en" data-game-id="verdant-veil">
 
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Verdant Veil</title>
-  <link rel="icon" href="../images/logo-tao.svg" type="image/svg+xml">
+  <link rel="icon" href="../assets/logo-tao.svg" type="image/svg+xml">
   <link rel="stylesheet" href="../css/style.css">
   <link rel="stylesheet" href="../css/char-seqence.css">
   <script src="../js/main.js"></script>
@@ -14,57 +13,8 @@
 </head>
 
 <body>
-  <!--Header-->
-  <div class="overlay"></div>
-  <header>
-    <nav>
-      <div class="logo">
-        <a href="/"><img src="../images/logo-tao.svg" alt="Logo" style="height: 24px; display: block;"></a>
-      </div>
-      <ul>
-        <li><a href="/">HOME</a></li>
-        <li class="has-dropdown">
-          <a href="#">GAMES</a>
-          <div class="dropdown-menu">
-            <div class="dropdown-content">
-              <ul class="dropdown-links">
-                <li><span class="dropdown-title">Explore Portfolios</span></li>
-                <!-- <li><a href="#">Veiw All Games</a></li> -->
-                <li><a href="../games/verdant-veil.html">Verdant Veil</a></li>
-                <li><a href="#">Micro Master</a></li>
-                <li><a href="#">Myth Valley</a></li>
-                <li><a href="../games/delete-me-not.html">Delete Me Not</a></li>
-                <li><a href="../games/tag-valhalla.html">Tag Valhalla</a></li>
-              </ul>
-            </div>
-          </div>
-        </li>
-        <li class="has-dropdown">
-          <a href="#">PHOTOS</a>
-          <div class="dropdown-menu">
-            <div class="dropdown-content">
-              <ul class="dropdown-links">
-                <li><span class="dropdown-title">Explore Photos</span></li>
-                <li><a href="#">Digital</a></li>
-                <li><a href="#">Film</a></li>
-              </ul>
-            </div>
-          </div>
-        </li>
-        <li><a href="#">ABOUT</a></li>
-      </ul>
-      <div class="email-icon">
-        <a href="mailto:thy20030626@gmail.com" title="Contact me">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M4 4H20C21.1 4 22 4.9 22 6V18C22 19.1 21.1 20 20 20H4C2.9 20 2 19.1 2 18V6C2 4.9 2.9 4 4 4Z"
-              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-            <polyline points="22,6 12,13 2,6" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-              stroke-linejoin="round" />
-          </svg>
-        </a>
-      </div>
-    </nav>
-  </header>
+  <!-- Shared nav will be injected here -->
+  <div id="nav-container"></div>
 
   <!-- Announcement Banner -->
   <div class="announcement-banner" id="announcementBanner">
@@ -81,55 +31,65 @@
 
   <!-- Main Content -->
   <div class="game-cover-container">
-    <video id="cover-video" autoplay>
-      <source src="../images/games/verdant-veil/verdant-veil-cover.webm" type="video/webm">
+    <video id="cover-video" autoplay muted>
+      <source src="../assets/games/verdant-veil/verdant-veil-cover.webm" type="video/webm">
     </video>
+    <div class="scroll-indicator">
+      <span>Scroll</span>
+      <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M5 7L10 12L15 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
     </div>
-    <div class="video-controls">
-      <button class="video-control-button" id="videoReplayButton" aria-label="Replay video" title="Replay">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M20.49 15A9 9 0 1 1 18.37 5.64" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-            stroke-linejoin="round" />
-          <path d="M23 4V10H17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-        </svg>
-      </button>
-      <button class="video-control-button" id="videoMuteButton" aria-label="Toggle sound" title="Mute">
-        <svg class="icon-unmuted" width="24" height="24" viewBox="0 0 24 24" fill="none"
-          xmlns="http://www.w3.org/2000/svg">
-          <path d="M11 5L6 9H2V15H6L11 19V5Z" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-            stroke-linejoin="round" />
-          <path
-            d="M19.07 4.93C20.9284 6.78842 21.9983 9.3428 21.9983 12.0001C21.9983 14.6573 20.9284 17.2117 19.07 19.0701M15.54 8.46C16.4692 9.38918 16.9999 10.6664 16.9999 12.0001C16.9999 13.3337 16.4692 14.6109 15.54 15.5401"
-            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-        </svg>
-        <svg class="icon-muted" width="24" height="24" viewBox="0 0 24 24" fill="none"
-          xmlns="http://www.w3.org/2000/svg">
-          <path d="M11 5L6 9H2V15H6L11 19V5Z" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-            stroke-linejoin="round" />
-          <line x1="23" y1="9" x2="17" y2="15" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-            stroke-linejoin="round" />
-          <line x1="17" y1="9" x2="23" y2="15" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-            stroke-linejoin="round" />
-        </svg>
-      </button>
-    </div>
+  </div>
+  <div class="video-controls">
+    <button class="video-control-button" id="videoReplayButton" aria-label="Replay video" title="Replay">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M20.49 15A9 9 0 1 1 18.37 5.64" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+          stroke-linejoin="round" />
+        <path d="M23 4V10H17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+      </svg>
+    </button>
+    <button class="video-control-button" id="videoMuteButton" aria-label="Toggle sound" title="Mute">
+      <svg class="icon-unmuted" width="24" height="24" viewBox="0 0 24 24" fill="none"
+        xmlns="http://www.w3.org/2000/svg">
+        <path d="M11 5L6 9H2V15H6L11 19V5Z" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+          stroke-linejoin="round" />
+        <path
+          d="M19.07 4.93C20.9284 6.78842 21.9983 9.3428 21.9983 12.0001C21.9983 14.6573 20.9284 17.2117 19.07 19.0701M15.54 8.46C16.4692 9.38918 16.9999 10.6664 16.9999 12.0001C16.9999 13.3337 16.4692 14.6109 15.54 15.5401"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+      </svg>
+      <svg class="icon-muted" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M11 5L6 9H2V15H6L11 19V5Z" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+          stroke-linejoin="round" />
+        <line x1="23" y1="9" x2="17" y2="15" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+          stroke-linejoin="round" />
+        <line x1="17" y1="9" x2="23" y2="15" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+          stroke-linejoin="round" />
+      </svg>
+    </button>
+  </div>
   </div>
   <main class="content-wrapper">
     <section class="game-content-section game-section-with-image">
       <div class="text-content">
         <h2>Inspiration</h2>
         <p>
-          As a Photography enthusiasts passionate about capturing the natural scenery, I deeply appreciate the solace that nature brings to our soul, something unattainable in industrialized cities. Earth is a miracle in the vast universe. I'll never forget the desire to find terrestrial planets when playing "No man's sky". I believe the earth will always be the Eden for human beings. However, in the 21st century, environmental conservation becomes a tool in political struggles, it seems the word is willing to ignore the harms should have been eliminated…
+          As a Photography enthusiasts passionate about capturing the natural scenery, I deeply appreciate the solace
+          that nature brings to our soul, something unattainable in industrialized cities. Earth is a miracle in the
+          vast universe. I'll never forget the desire to find terrestrial planets when playing "No man's sky". I believe
+          the earth will always be the Eden for human beings. However, in the 21st century, environmental conservation
+          becomes a tool in political struggles, it seems the word is willing to ignore the harms should have been
+          eliminated…
         </p>
       </div>
       <div class="image-content">
-        <img src="../images/games/verdant-veil/landscape-230813.webp" alt="Inspiration landscape">
+        <img src="../assets/games/verdant-veil/landscape-230813.webp" alt="Inspiration landscape">
       </div>
     </section>
 
     <section class="game-content-section full-width-image-section">
       <h2>Concept</h2>
-      <img src="../images/games/verdant-veil/level-concept.webp" alt="Concept">
+      <img src="../assets/games/verdant-veil/level-concept.webp" alt="Concept">
     </section>
 
     <section class="game-content-section">
@@ -138,44 +98,49 @@
 
         <div class="character-card">
           <div class="character-assets">
-            <img src="../images/games/verdant-veil/lia.png" alt="Lia character design">
-            <img src="../images/games/verdant-veil/lia_walk.gif" alt="Lia walk animation">
-            <img src="../images/games/verdant-veil/lia-jump-seqence.png" alt="Lia jump sequence" class="sequence-asset">
+            <img src="../assets/games/verdant-veil/lia.png" alt="Lia character design">
+            <img src="../assets/games/verdant-veil/lia_walk.gif" alt="Lia walk animation">
+            <img src="../assets/games/verdant-veil/lia-jump-seqence.png" alt="Lia jump sequence" class="sequence-asset">
           </div>
           <div class="character-description">
             <h3>Lia</h3>
-            <p>Lia, embarks on a destined journey, restore the balance against the encroaching of Zenthrax. She rescued a firefly called "Lumina" affected by the Zenthrax fell in the woods.</p>
+            <p>Lia, embarks on a destined journey, restore the balance against the encroaching of Zenthrax. She rescued
+              a firefly called "Lumina" affected by the Zenthrax fell in the woods.</p>
           </div>
         </div>
 
         <div class="character-card">
           <div class="character-assets">
-            <img src="../images/games/verdant-veil/lumina.png" alt="Lumina character design">
-            <img src="../images/games/verdant-veil/lumina_fly.gif" alt="Lumina fly animation">
-            <img src="../images/games/verdant-veil/lumina-fly-seqence.png" alt="Lumina fly sequence" class="sequence-asset">
+            <img src="../assets/games/verdant-veil/lumina.png" alt="Lumina character design">
+            <img src="../assets/games/verdant-veil/lumina_fly.gif" alt="Lumina fly animation">
+            <img src="../assets/games/verdant-veil/lumina-fly-seqence.png" alt="Lumina fly sequence"
+              class="sequence-asset">
           </div>
           <div class="character-description">
             <h3>Lumina</h3>
-            <p>Lumina illuminate darkness, reveal hidden paths, and activate the light-sensitive mechanisms. It's also the expand of Natural's Whisper.</p>
+            <p>Lumina illuminate darkness, reveal hidden paths, and activate the light-sensitive mechanisms. It's also
+              the expand of Natural's Whisper.</p>
           </div>
         </div>
 
         <div class="character-card">
           <div class="character-assets">
-            <img src="../images/games/verdant-veil/echo.png" alt="Echo character design">
-            <img src="../images/games/verdant-veil/echo_fly.gif" alt="Echo fly animation">
-            <img src="../images/games/verdant-veil/echo-fly-seqence.png" alt="Echo fly sequence" class="sequence-asset">
+            <img src="../assets/games/verdant-veil/echo.png" alt="Echo character design">
+            <img src="../assets/games/verdant-veil/echo_fly.gif" alt="Echo fly animation">
+            <img src="../assets/games/verdant-veil/echo-fly-seqence.png" alt="Echo fly sequence" class="sequence-asset">
           </div>
           <div class="character-description">
             <h3>Echo</h3>
-            <p>Echo can emit a series of soundwaves, visualized for the player as waves that bounce off surfaces and reveal the cave's topography, finding hidden openings, or avoiding collapses in the unstable cave.</p>
+            <p>Echo can emit a series of soundwaves, visualized for the player as waves that bounce off surfaces and
+              reveal the cave's topography, finding hidden openings, or avoiding collapses in the unstable cave.</p>
           </div>
         </div>
 
         <div class="character-card">
           <div class="character-assets">
-            <img src="../images/games/verdant-veil/muelsyse.png" alt="Muelsyse character design">
-            <img src="../images/games/verdant-veil/muelsyse-move-seqence.png" alt="Muelsyse move sequence" class="sequence-asset">
+            <img src="../assets/games/verdant-veil/muelsyse.png" alt="Muelsyse character design">
+            <img src="../assets/games/verdant-veil/muelsyse-move-seqence.png" alt="Muelsyse move sequence"
+              class="sequence-asset">
           </div>
           <div class="character-description">
             <h3>Muelsyse</h3>
@@ -185,9 +150,10 @@
 
         <div class="character-card">
           <div class="character-assets">
-            <img src="../images/games/verdant-veil/zener.png" alt="Zener character design">
-            <img src="../images/games/verdant-veil/zener-fly.gif" alt="Zener fly animation">
-            <img src="../images/games/verdant-veil/zener-fly-seqence.png" alt="Zener fly sequence" class="sequence-asset">
+            <img src="../assets/games/verdant-veil/zener.png" alt="Zener character design">
+            <img src="../assets/games/verdant-veil/zener-fly.gif" alt="Zener fly animation">
+            <img src="../assets/games/verdant-veil/zener-fly-seqence.png" alt="Zener fly sequence"
+              class="sequence-asset">
           </div>
           <div class="character-description">
             <h3>Zener</h3>
@@ -203,15 +169,21 @@
     </section>
 
     <div class="full-bleed-image">
-      <img src="../images/games/verdant-veil/scene-land-detail.webp" alt="Level Design - Land Detail">
+      <img src="../assets/games/verdant-veil/scene-land-detail.webp" alt="Level Design - Land Detail">
     </div>
     <div class="full-bleed-image">
-      <img src="../images/games/verdant-veil/scene-glade-detail.webp" alt="Level Design - Glade Detail">
+      <img src="../assets/games/verdant-veil/scene-glade-detail.webp" alt="Level Design - Glade Detail">
     </div>
     <div class="full-bleed-image">
-      <img src="../images/games/verdant-veil/scene-cave-detail.webp" alt="Level Design - Cave Detail">
+      <img src="../assets/games/verdant-veil/scene-cave-detail.webp" alt="Level Design - Cave Detail">
     </div>
   </main>
+
+  <!--Footer-->
+  <footer>
+    <p>&copy; 2025 Timothy Tao</p>
+  </footer>
+
 </body>
 
 </html>

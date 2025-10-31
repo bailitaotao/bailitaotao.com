@@ -1,49 +1,50 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // Dropdown menu logic
-  const dropdowns = document.querySelectorAll(".has-dropdown");
-  const header = document.querySelector("header");
-  const overlay = document.querySelector(".overlay");
-  let activeDropdown = null;
-
-  dropdowns.forEach(dropdown => {
-    dropdown.addEventListener("mouseenter", () => {
-      // Disable transition when switching between active dropdowns
-      if (activeDropdown) {
-        dropdowns.forEach(d => d.classList.add("no-transition"));
-      }
-      
-      // Update active states
-      dropdowns.forEach(d => d.classList.remove("active"));
-      dropdown.classList.add("active");
-      overlay.classList.add("active");
-      header.classList.add("solid");
-      activeDropdown = dropdown;
-      
-      // Re-enable transitions
-      if (dropdowns.length > 1) {
-        setTimeout(() => dropdowns.forEach(d => d.classList.remove("no-transition")), 50);
-      }
-    });
-  });
-
-  header.addEventListener("mouseleave", () => {
-    closeAllDropdowns();
-  });
-
-  // Close dropdowns when scrolling
-  window.addEventListener("wheel", () => {
-    if (activeDropdown) {
-      closeAllDropdowns();
+  // Load shared navigation markup, then initialize dropdown behavior
+  const loadNav = async () => {
+    const container = document.getElementById("nav-container");
+    if (!container) return;
+    try {
+      const res = await fetch("/nav.html", { cache: "no-cache" });
+      const html = await res.text();
+      container.innerHTML = html;
+      initNavBehavior();
+    } catch (e) {
+      console.error("Failed to load nav:", e);
     }
-  }, { passive: true });
+  };
 
-  // Helper function to close all dropdowns
-  function closeAllDropdowns() {
-    dropdowns.forEach(d => d.classList.remove("active"));
-    overlay.classList.remove("active");
-    header.classList.remove("solid");
-    activeDropdown = null;
-  }
+  const initNavBehavior = () => {
+    const dropdowns = document.querySelectorAll(".has-dropdown");
+    const header = document.querySelector("header");
+    const overlay = document.querySelector(".overlay");
+    if (!dropdowns.length || !header || !overlay) return;
+
+    let activeDropdown = null;
+
+    dropdowns.forEach(dropdown => {
+      dropdown.addEventListener("mouseenter", () => {
+        if (activeDropdown) dropdowns.forEach(d => d.classList.add("no-transition"));
+        dropdowns.forEach(d => d.classList.remove("active"));
+        dropdown.classList.add("active");
+        overlay.classList.add("active");
+        header.classList.add("solid");
+        activeDropdown = dropdown;
+        if (dropdowns.length > 1) setTimeout(() => dropdowns.forEach(d => d.classList.remove("no-transition")), 50);
+      });
+    });
+
+    const closeAllDropdowns = () => {
+      dropdowns.forEach(d => d.classList.remove("active"));
+      overlay.classList.remove("active");
+      header.classList.remove("solid");
+      activeDropdown = null;
+    };
+
+    header.addEventListener("mouseleave", closeAllDropdowns);
+    window.addEventListener("wheel", () => { if (activeDropdown) closeAllDropdowns(); }, { passive: true });
+  };
+
+  loadNav();
 
   // Announcement banner logic (only for pages with addressnake.js)
   const announcementBanner = document.getElementById("announcementBanner");
