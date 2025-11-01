@@ -418,9 +418,9 @@ a.inline-link:hover {
   top: 50%;
   width: 48px;
   height: 48px;
-  border: none;
-  background: var(--color-bg-dark);
-  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  background: var(--color-bg-dark-transparent);
+  color: var(--color-text-light);
   border-radius: 50%;
   cursor: pointer;
   display: flex;
@@ -429,6 +429,8 @@ a.inline-link:hover {
   transition: background-color var(--transition-fast), transform 0.2s ease;
   z-index: 10;
   transform: translateY(-50%);
+  backdrop-filter: saturate(180%) blur(20px);
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
 }
 
 .carousel-btn-prev {
@@ -441,11 +443,10 @@ a.inline-link:hover {
 
 .carousel-btn:hover {
   background: var(--color-accent);
-  transform: scale(1.1);
 }
 
 .carousel-btn:active {
-  transform: scale(0.95);
+  transform: translateY(-50%);
 }
 
 .carousel-indicators {
