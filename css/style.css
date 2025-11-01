@@ -254,11 +254,12 @@ main {
 .about-section {
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   gap: 3rem;
   margin: 0 auto;
-  padding: 3rem 2rem 5rem 2rem;
-  width: fit-content;
+  padding: 3rem 2rem;
+  max-width: 1200px;
+  width: 100%;
 }
 
 .portrait {
@@ -275,7 +276,8 @@ main {
 .experience {
   display: flex;
   flex-direction: column;
-  width: fit-content;
+  flex: 1;
+  max-width: 600px;
 }
 
 .experience h2 {
@@ -291,6 +293,17 @@ main {
   margin-bottom: 1rem;
   font-size: 1rem;
   line-height: 1.6;
+  flex-wrap: wrap;
+}
+
+.experience-item > span:first-child {
+  flex-shrink: 0;
+  min-width: 120px;
+}
+
+.experience-item > span:last-child {
+  flex: 1;
+  min-width: 200px;
 }
 
 .experience-icon {
@@ -313,7 +326,7 @@ a.inline-link:hover {
 
 /* Carousel Section */
 .carousel-section {
-  padding: 4rem 2rem;
+  padding: 4rem 0;
   background: #f8f8f8;
   text-align: center;
 }
@@ -327,18 +340,16 @@ a.inline-link:hover {
 
 .carousel-container {
   position: relative;
-  max-width: 1200px;
-  margin: 0 auto;
-  display: flex;
-  align-items: center;
-  gap: 2rem;
+  width: 100%;
+  margin: 0;
+  max-width: none;
 }
 
 .carousel-track-wrapper {
-  flex: 1;
+  width: 100%;
   overflow: hidden;
   position: relative;
-  padding: 0rem 0 3rem 0;
+  padding: 2rem 0;
 }
 
 .carousel-track {
@@ -403,7 +414,8 @@ a.inline-link:hover {
 }
 
 .carousel-btn {
-  flex-shrink: 0;
+  position: absolute;
+  top: 50%;
   width: 48px;
   height: 48px;
   border: none;
@@ -416,6 +428,15 @@ a.inline-link:hover {
   justify-content: center;
   transition: background-color var(--transition-fast), transform 0.2s ease;
   z-index: 10;
+  transform: translateY(-50%);
+}
+
+.carousel-btn-prev {
+  left: clamp(0.75rem, 4vw, 2.5rem);
+}
+
+.carousel-btn-next {
+  right: clamp(0.75rem, 4vw, 2.5rem);
 }
 
 .carousel-btn:hover {
@@ -457,29 +478,78 @@ a.inline-link:hover {
 
 /* Responsive adjustments for carousel */
 @media (max-width: 768px) {
+  /* About Section */
+  .about-section {
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    padding: 2rem 1rem;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .portrait {
+    width: 200px;
+  }
+
+  .experience {
+    width: 100%;
+    max-width: 500px;
+  }
+
+  .experience h2 {
+    font-size: 2rem;
+    text-align: center;
+  }
+
+  .experience-item {
+    flex-direction: column;
+    gap: 0.5rem;
+    text-align: center;
+    font-size: 0.95rem;
+  }
+
+  /* Carousel */
+  .carousel-section {
+    padding: 3rem 0;
+  }
+
+  .carousel-section h2 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+
   .carousel-item {
-    width: 250px;
-    height: 250px;
+    width: 200px;
+    height: 200px;
   }
   
   .carousel-track {
-    padding: 0 calc(50% - 125px);
+    padding: 0 calc(50% - 100px);
+    gap: 1rem;
   }
   
   .carousel-btn {
-    width: 40px;
-    height: 40px;
+    width: 36px;
+    height: 36px;
+    top: 52%;
   }
-  
-  .carousel-container {
-    gap: 1rem;
+
+  .carousel-btn svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  .carousel-item-title {
+    font-size: 1rem;
+    padding: 1.5rem 0.5rem 0.5rem;
   }
 }
 
 /* Footer */
 footer {
   text-align: center;
-  padding: var(--spacing-standard);
+  padding: 30px;
   background: #333;
   color: #fff;
 }
