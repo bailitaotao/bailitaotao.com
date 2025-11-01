@@ -93,6 +93,11 @@ document.addEventListener("DOMContentLoaded", () => {
   const videoMuteButton = document.getElementById("videoMuteButton");
   const videoReplayButton = document.getElementById("videoReplayButton");
 
+  // Set video volume to 30%
+  if (video) {
+    video.volume = 0.3;
+  }
+
   if (video && videoMuteButton) {
     // Set initial button state on page load
     const updateMuteButton = () => {
@@ -126,14 +131,24 @@ document.addEventListener("DOMContentLoaded", () => {
 
     let currentIndex = 0;
     let autoPlayInterval = null;
-    const itemWidth = 300 + 32; // item width + gap
+
+    const getItemWidth = () => {
+      // 动态获取item宽度和gap
+      const item = items[0];
+      const style = window.getComputedStyle(item);
+      const itemWidth = item.offsetWidth;
+      const trackStyle = window.getComputedStyle(track);
+      const gap = parseFloat(trackStyle.gap) || 0;
+      return itemWidth + gap;
+    };
 
     const updateCarousel = (animate = true) => {
       if (!animate) {
         track.style.transition = "none";
       }
       
-      // Calculate offset to center the active item
+      // 使用动态计算的宽度
+      const itemWidth = getItemWidth();
       const offset = -currentIndex * itemWidth;
       track.style.transform = `translateX(${offset}px)`;
       
@@ -228,6 +243,15 @@ document.addEventListener("DOMContentLoaded", () => {
         nextSlide();
         startAutoPlay(); // 重置定时器
       }
+    });
+
+    // Handle window resize
+    let resizeTimeout;
+    window.addEventListener("resize", () => {
+      clearTimeout(resizeTimeout);
+      resizeTimeout = setTimeout(() => {
+        updateCarousel(false);
+      }, 150);
     });
 
     // Initialize
