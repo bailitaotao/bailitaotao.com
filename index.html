@@ -39,52 +39,57 @@
         </div>
       </div>
     </div>
-    <div class="content-wrapper">
-      <p>This is the main content area.
-        This is the main content area.This is the main content area.This is the main content area.This is the
-        main content area.This is the main content area.This is the main content area.This is the main content
-        area.This is the main content area.This is the main content area.This is the main content area.This is
-        the main content area.This is the main content area.This is the main content area.This is the main
-        content area.This is the main content area.This is the main content area.This is the main content
-        area.This is the main content area.This is the main content area.This is the main content area.This is
-        the main content area.This is the main content area.This is the main content area.This is the main
-        content area.This is the main content area.This is the main content area.This is the main content
-        area.This is the main content area.This is the main content area.This is the main content area.This is
-        the main content area.This is the main content area.This is the main content area.This is the main
-        content area.This is the main content area.This is the main content area.This is the main content
-        area.This is the main content area.This is the main content area.This is the main content area. This is
-        the main content area.This is the main content area.This is the main content area.This is the main
-        content area.This is the main content area.This is the main content area.This is the main content
-        area.This is the main content area.This is the main content area.This is the main content area.This is
-        the main content area.This is the main content area.This is the main content area.This is the main
-        content area.This is the main content area.This is the main content area.This is the main content
-        area.This is the main content area.This is the main content area.This is the main content area.This is
-        the main content area.This is the main content area.This is the main content area.This is the main
-        content area.This is the main content area.This is the main content area.This is the main content
-        area.This is the main content area.This is the main content area.This is the main content area.This is
-        the main content area.This is the main content area.This is the main content area.This is the main
-        content area.This is the main content area.This is the main content area.This is the main content
-        area.This is the main content area.This is the main content area.This is the main content area.This is
-        the main content area.This is the main content area.This is the main content area.This is the main
-        content area.This is the main content area.This is the main content area.This is the main content
-        area.This is the main content area.This is the main content area.This is the main content area.This is
-        the main content area.This is the main content area.This is the main content area.This is the main
-        content area.This is the main content area.This is the main content area.This is the main content
-        area.This is the main content area.This is the main content area.This is the main content area.This is
-        the main content area.This is the main content area.This is the main content area.This is the main
-        content area.This is the main content area.This is the main content area.This is the main content
-        area.This is the main content area.This is the main content area.This is the main content area.This is
-        the main content area.This is the main content area.This is the main content area.This is the main
-        content area.This is the main content area.This is the main content area.This is the main content
-        area.This is the main content area.This is the main content area.This is the main content area.
-      </p>
+
+    <!-- Game Carousel Section -->
+    <div class="carousel-section">
+      <h2>Featured Works</h2>
+      <div class="carousel-container">
+        <button class="carousel-btn carousel-btn-prev" aria-label="Previous game">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+        
+        <div class="carousel-track-wrapper">
+          <div class="carousel-track">
+            <a href="games/verdant-veil.html" class="carousel-item" data-index="0">
+              <img src="assets/home/verdant-veil-cover.webp" alt="Verdant Veil">
+              <div class="carousel-item-title">Verdant Veil</div>
+            </a>
+            <a href="games/micro-master.html" class="carousel-item" data-index="1">
+              <img src="assets/home/micro-master-cover.webp" alt="Micro Master">
+              <div class="carousel-item-title">Micro Master</div>
+            </a>
+            <a href="games/myth-valley.html" class="carousel-item" data-index="2">
+              <img src="assets/home/myth-valley-cover.webp" alt="Myth Valley">
+              <div class="carousel-item-title">Myth Valley</div>
+            </a>
+            <a href="games/tag-valhalla.html" class="carousel-item" data-index="3">
+              <img src="assets/home/delete-me-not-cover.webp" alt="Tag Valhalla">
+              <div class="carousel-item-title">Tag Valhalla</div>
+            </a>
+          </div>
+        </div>
+
+        <button class="carousel-btn carousel-btn-next" aria-label="Next game">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+      </div>
+      
+      <div class="carousel-indicators">
+        <button class="carousel-indicator active" data-index="0" aria-label="Go to game 1"></button>
+        <button class="carousel-indicator" data-index="1" aria-label="Go to game 2"></button>
+        <button class="carousel-indicator" data-index="2" aria-label="Go to game 3"></button>
+        <button class="carousel-indicator" data-index="3" aria-label="Go to game 4"></button>
+      </div>
     </div>
+
   </main>
 
-  <!--Footer-->
-  <footer>
-    <p>&copy; 2025 Timothy Tao</p>
-  </footer>
+  <!-- Shared footer will be injected here -->
+  <div id="footer-container"></div>
 
 
 </body>

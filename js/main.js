@@ -13,6 +13,17 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   };
 
+  const loadFooter = async () => {
+    const container = document.getElementById("footer-container");
+    if (!container) return;
+    try {
+      const res = await fetch("/footer.html", { cache: "no-cache" });
+      container.innerHTML = await res.text();
+    } catch (e) {
+      console.error("Failed to load footer:", e);
+    }
+  };
+
   const initNavBehavior = () => {
     const dropdowns = document.querySelectorAll(".has-dropdown");
     const header = document.querySelector("header");
@@ -45,6 +56,7 @@ document.addEventListener("DOMContentLoaded", () => {
   };
 
   loadNav();
+  loadFooter();
 
   // Announcement banner logic (only for pages with addressnake.js)
   const announcementBanner = document.getElementById("announcementBanner");
@@ -101,4 +113,127 @@ document.addEventListener("DOMContentLoaded", () => {
       video.play();
     });
   }
+
+  // Carousel functionality
+  const initCarousel = () => {
+    const track = document.querySelector(".carousel-track");
+    const items = document.querySelectorAll(".carousel-item");
+    const prevBtn = document.querySelector(".carousel-btn-prev");
+    const nextBtn = document.querySelector(".carousel-btn-next");
+    const indicators = document.querySelectorAll(".carousel-indicator");
+    
+    if (!track || !items.length) return;
+
+    let currentIndex = 0;
+    let autoPlayInterval = null;
+    const itemWidth = 300 + 32; // item width + gap
+
+    const updateCarousel = (animate = true) => {
+      if (!animate) {
+        track.style.transition = "none";
+      }
+      
+      // Calculate offset to center the active item
+      const offset = -currentIndex * itemWidth;
+      track.style.transform = `translateX(${offset}px)`;
+      
+      // Update active states
+      items.forEach((item, index) => {
+        if (index === currentIndex) {
+          item.classList.add("active");
+        } else {
+          item.classList.remove("active");
+        }
+      });
+
+      // Update indicators
+      indicators.forEach((indicator, index) => {
+        if (index === currentIndex) {
+          indicator.classList.add("active");
+        } else {
+          indicator.classList.remove("active");
+        }
+      });
+
+      // Re-enable transition after a frame
+      if (!animate) {
+        requestAnimationFrame(() => {
+          track.style.transition = "";
+        });
+      }
+    };
+
+    const goToSlide = (index, animate = true) => {
+      currentIndex = (index + items.length) % items.length;
+      updateCarousel(animate);
+    };
+
+    const nextSlide = () => {
+      goToSlide(currentIndex + 1);
+    };
+
+    const prevSlide = () => {
+      goToSlide(currentIndex - 1);
+    };
+
+    const startAutoPlay = () => {
+      stopAutoPlay(); // 确保清除旧的定时器
+      autoPlayInterval = setInterval(nextSlide, 3000);
+    };
+
+    const stopAutoPlay = () => {
+      if (autoPlayInterval) {
+        clearInterval(autoPlayInterval);
+        autoPlayInterval = null;
+      }
+    };
+
+    // Event listeners
+    if (prevBtn) {
+      prevBtn.addEventListener("click", (e) => {
+        e.preventDefault();
+        prevSlide();
+        startAutoPlay(); // 重置定时器
+      });
+    }
+
+    if (nextBtn) {
+      nextBtn.addEventListener("click", (e) => {
+        e.preventDefault();
+        nextSlide();
+        startAutoPlay(); // 重置定时器
+      });
+    }
+
+    indicators.forEach((indicator, index) => {
+      indicator.addEventListener("click", () => {
+        goToSlide(index);
+        startAutoPlay(); // 重置定时器
+      });
+    });
+
+    // Pause autoplay on hover
+    const carouselContainer = document.querySelector(".carousel-container");
+    if (carouselContainer) {
+      carouselContainer.addEventListener("mouseenter", stopAutoPlay);
+      carouselContainer.addEventListener("mouseleave", startAutoPlay);
+    }
+
+    // Keyboard navigation
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "ArrowLeft") {
+        prevSlide();
+        startAutoPlay(); // 重置定时器
+      } else if (e.key === "ArrowRight") {
+        nextSlide();
+        startAutoPlay(); // 重置定时器
+      }
+    });
+
+    // Initialize
+    updateCarousel(false);
+    startAutoPlay();
+  };
+
+  initCarousel();
 });
