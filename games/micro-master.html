@@ -7,6 +7,7 @@
   <title>Micro Master - Timothy's Website</title>
   <link rel="icon" href="../assets/logo-tao.svg" type="image/svg+xml">
   <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/micro-master.css">
   <script src="../js/main.js"></script>
 </head>
 
@@ -15,9 +16,145 @@
 	<div id="nav-container"></div>
 
 	<main>
-	
-	</script>
-  
+        <!-- Hero Section -->
+        <div class="game-cover-container">
+            <img src="../assets/games/micro-master/cover.webp" alt="Micro Master Cover">
+            <div class="scroll-indicator">
+                <span>Scroll Down</span>
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+                </svg>
+            </div>
+        </div>
+
+        <!-- Pitch & Concept -->
+        <section class="game-content-section">
+            <div class="two-column-layout">
+                <div>
+                    <h2>Pitch</h2>
+                    <p>
+                        Dive into the intricate world of microprocessor design with our dynamic card game! Assemble core components like Registers, ALUs, and Control Units, and enhance your processor with essential and non-essential components. Strategically use command and energy cards to optimize your design, aiming for victory by creating the ultimate microprocessor architecture.
+                    </p>
+                </div>
+                <div>
+                    <h2>Concept</h2>
+                    <p>
+                        My design approach integrates traditional set-collection mechanics with educational content, inspired by games like Mahjong, Set, and Splendor. By balancing strategic decision-making with the principles of microprocessor design, the game uniquely illustrates the trade-offs and benefits of different components. This blend of strategy and education not only engages players but also serves as an accessible introduction to the fundamentals of how microprocessors work.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Schematic -->
+        <section class="game-content-section game-section-with-image">
+            <div class="text-content">
+                <h2 style="color: var(--color-accent); margin-bottom: 1rem;">Microprocessor Architecture</h2>
+                <p>
+                    By incorporating strategic decisions that magnify the trade-offs and benefits of each card, the game offers a nuanced simulation of microprocessor design. In an era where computing devices are indispensable, this game serves as an educational tool for those newly exploring the fundamentals of computer operations.
+                </p>
+            </div>
+            <div class="image-content">
+                <img src="../assets/games/micro-master/micro.webp" alt="Microprocessor Schematic" class="zoomable">
+            </div>
+        </section>
+
+        <!-- Inspiration & Mahjong -->
+        <section class="game-content-section game-section-with-image">
+            <div class="text-content">
+                <h2>Inspiration: Mahjong</h2>
+                <p>
+                    Inspired by the traditional Chinese board game Mahjong, this card game draws parallels to the microprocessor principles I studied during my undergraduate years. Just as Mahjong requires forming specific tile sets, this game involves combining core and component cards to build a basic computing micro chip.
+                </p>
+                <p style="margin-top: 1rem;">
+                    Mahjong's set formation mechanics, strategic depth, and balance of trade-offs significantly influenced my design. The combination in Mahjong inspired the core mechanic of forming sets of cards to simulate microprocessor assembly. Its strategic decision-making and risk vs. reward dynamics informed the game's strategic elements, where players must carefully manage their cards.
+                </p>
+            </div>
+            <div class="image-content">
+                <img src="../assets/games/micro-master/mahjong.webp" alt="Mahjong Inspiration">
+            </div>
+        </section>
+
+        <!-- Game Components -->
+        <section class="game-content-section">
+            <h2>Game Components</h2>
+            <p style="text-align: center; margin-bottom: 2rem;">Micro Master consists of 148 cards, divided into four main categories:</p>
+            
+            <div class="cards-grid">
+                <div class="card-item">
+                    <img src="../assets/games/micro-master/core-card.webp" alt="Core Card">
+                    <h3>Core Cards (96)</h3>
+                    <p class="card-desc">Registers, I/O Units, Arithmetic Logic Units, Control Units. Representing fundamental elements.</p>
+                </div>
+                <div class="card-item">
+                    <img src="../assets/games/micro-master/componet-card.webp" alt="Component Card">
+                    <h3>Component Cards (32)</h3>
+                    <p class="card-desc">Cache, Memory Controllers, Integrated Graphics, NPUs. Expanding capabilities.</p>
+                </div>
+                <div class="card-item">
+                    <img src="../assets/games/micro-master/commend-card.webp" alt="Command Card">
+                    <h3>Command Cards (12)</h3>
+                    <p class="card-desc">Priority Scheduling, Instruction Steal, Exception, Debugging, Data Recovery, Core Isolation.</p>
+                </div>
+                <div class="card-item">
+                    <img src="../assets/games/micro-master/energy-card.webp" alt="Energy Card">
+                    <h3>Energy Cards (8)</h3>
+                    <p class="card-desc">Fuel your microprocessor's actions. Essential for creating circuit designs.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Game Manual -->
+        <section class="game-content-section manual-section">
+            <h2>Official Manual</h2>
+            <div class="manual-grid">
+                <img src="../assets/games/micro-master/manual-1.webp" alt="Game Manual Page 1" class="zoomable">
+                <img src="../assets/games/micro-master/manual-2.webp" alt="Game Manual Page 2" class="zoomable">
+            </div>
+        </section>
+
+        <!-- Game Guide / Rules -->
+        <section class="game-content-section rules-section">
+            <h2>Game Guide Summary</h2>
+            
+            <div class="rules-grid">
+                <div class="rule-block phase-block">
+                    <h3>Game Phases</h3>
+                    <ul>
+                        <li><strong>Drawing Phase:</strong> Each player starts with 15 cards. Draw one initial card in a clockwise order.</li>
+                        <li><strong>Playing Phase:</strong> Play cards to the public area or use them to build/optimize your microprocessor formation.</li>
+                        <li><strong>Response Phase:</strong> When a card is played, others can Link (Sequence), Synchronize (Triplet), or Overclock (4 same cards).</li>
+                    </ul>
+                </div>
+
+                <div class="rule-block action-block">
+                    <h3>Strategic Actions</h3>
+                    <div class="action-item">
+                        <strong>READ</strong>
+                        <p>Draw a card and place it into the discard pile, earning power points for consecutive actions.</p>
+                    </div>
+                    <div class="action-item">
+                        <strong>WRITE</strong>
+                        <p>Draw a card and add it to your hand, discarding an unwanted card. Continuous WRITEs also generate valuable power points.</p>
+                    </div>
+                </div>
+
+                <div class="rule-block victory-block">
+                    <h3>Victory Conditions</h3>
+                    <p><strong>Core Card Combinations:</strong> Must include all four core types in either a Triplet (3 same value) or a Sequence (consecutive values).</p>
+                    <ul style="margin-top: 0.5rem;">
+                        <li><strong>ARM Architecture:</strong> Displaying ARM when two or more Triplets are formed.</li>
+                        <li><strong>x86 Architecture:</strong> Displaying x86 architecture when a fourth Sequence is formed.</li>
+                    </ul>
+                    <p style="margin-top: 1rem;"><strong>Component Cards:</strong> Must include at least one essential component pair and one non-essential component pair.</p>
+                </div>
+            </div>
+        </section>
+
+	</main>
+
+	<!-- Footer -->
+	<div id="footer-container"></div>
+
 </body>
 
 </html>
