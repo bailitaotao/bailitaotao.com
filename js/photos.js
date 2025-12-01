@@ -34,10 +34,9 @@ document.addEventListener('DOMContentLoaded', () => {
   // Configuration
   const getColumnCount = () => {
     const width = window.innerWidth;
-    if (width < 600) return 2;
-    if (width < 900) return 3;
-    if (width < 1400) return 4;
-    if (width < 1800) return 5;
+    if (width < 900) return 2;
+    if (width < 1400) return 3;
+    if (width < 1800) return 4;
     return 6;
   };
 
