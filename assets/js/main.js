@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const container = document.getElementById("nav-container");
     if (!container) return;
     try {
-      const res = await fetch("/assets/components/nav.html", { cache: "no-cache" });
+      const res = await fetch("/components/nav.html", { cache: "no-cache" });
       const html = await res.text();
       container.innerHTML = html;
       initNavBehavior();
@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const container = document.getElementById("footer-container");
     if (!container) return;
     try {
-      const res = await fetch("/assets/components/footer.html", { cache: "no-cache" });
+      const res = await fetch("/components/footer.html", { cache: "no-cache" });
       container.innerHTML = await res.text();
     } catch (e) {
       console.error("Failed to load footer:", e);
