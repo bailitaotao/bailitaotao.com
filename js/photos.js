@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const lightbox = document.getElementById('lightbox');
   const lightboxImg = document.getElementById('lightbox-img');
   const totalPhotos = 80;
-  const imageFolder = 'assets/photos/';
+  const imageFolder = '/assets/photos/';
   let allImages = [];
   let resizeTimeout;
 
@@ -72,7 +72,8 @@ document.addEventListener('DOMContentLoaded', () => {
       const imgData = {
         element: img,
         aspectRatio: 1, // default
-        loaded: false
+        loaded: false,
+        success: false
       };
       allImages.push(imgData);
       photoWall.appendChild(img);
@@ -83,15 +84,17 @@ document.addEventListener('DOMContentLoaded', () => {
       img.onload = () => {
         imgData.aspectRatio = img.naturalWidth / img.naturalHeight;
         imgData.loaded = true;
+        imgData.success = true;
         loadedCount++;
         
-        // Show image with fade in
-        img.classList.add('visible');
-        
-        // Perform layout incrementally or wait? 
-        // For smoother experience, we layout as they come, 
-        // but to ensure "shortest column" logic works best, 
-        // we should layout the ones that are ready in order.
+        // Perform layout
+        layout();
+      };
+
+      img.onerror = () => {
+        imgData.loaded = true;
+        imgData.success = false;
+        loadedCount++;
         layout();
       };
     });
@@ -107,8 +110,15 @@ document.addEventListener('DOMContentLoaded', () => {
     // Initialize column heights
     const colHeights = new Array(colCount).fill(0);
 
-    allImages.forEach(imgData => {
-      if (!imgData.loaded) return;
+    for (let i = 0; i < allImages.length; i++) {
+      const imgData = allImages[i];
+      
+      // Stop layout process at the first image that hasn't loaded yet
+      // This ensures images appear in order from top to bottom without jumping
+      if (!imgData.loaded) break;
+
+      // Skip failed images
+      if (!imgData.success) continue;
 
       // Find shortest column
       let minHeight = Math.min(...colHeights);
@@ -124,10 +134,15 @@ document.addEventListener('DOMContentLoaded', () => {
       img.style.height = `${Math.ceil(height)}px`;
       img.style.left = `${colIndex * width}px`;
       img.style.top = `${minHeight}px`;
+      
+      // Show image
+      if (!img.classList.contains('visible')) {
+        img.classList.add('visible');
+      }
 
       // Update column height
       colHeights[colIndex] += height;
-    });
+    }
 
     // Set container height
     const maxHeight = Math.max(...colHeights);
