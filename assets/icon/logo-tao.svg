@@ -1,0 +1,12 @@
+<svg width="108" height="121" viewBox="0 0 108 121" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M0 103C5 103 14 103 14 91C14 79 14 19 14 19C14 7 20 3 30 3" stroke="#DF465A" stroke-width="6"/>
+<path d="M14 21C18 21 28 21 30 21C32 21 34 23 34 25C34 27 34 29 34 31C34 33 32 35 30 35C28.4 35 18.6667 35 14 35" stroke="#DF465A" stroke-width="6"/>
+<path d="M14 47C18 47 28 47 30 47C32 47 34 49 34 51C34 53 34 55 34 57C34 59 32 61 30 61C28.4 61 18.6667 61 14 61" stroke="#DF465A" stroke-width="6"/>
+<path d="M14 73C18 73 28 73 30 73C32 73 34 75 34 77C34 79 34 81 34 83C34 85 32 87 30 87C28.4 87 18.6667 87 14 87" stroke="#DF465A" stroke-width="6"/>
+<path d="M70 1V19" stroke="#DF465A" stroke-width="6"/>
+<path d="M30 105C36 105 44 103 44 91C44 79 44 49.3333 44 35C44 29 48 19 70 19C92 19 96 29 96 35C96 35 96 57 96 75C96 93 84 93 84 105C84 117 96 121 106 115" stroke="#DF465A" stroke-width="6"/>
+<path d="M70 29V89" stroke="#DF465A" stroke-width="6"/>
+<path d="M56 53V37C56 31 64 30 70 30C76 30 84 31 84 37C84 41.8 84 49.6667 84 53" stroke="#DF465A" stroke-width="6"/>
+<path d="M56 59H84" stroke="#DF465A" stroke-width="6"/>
+<path d="M56 65C56 65 56 81 56 85C56 89 62 89 70 89C78 89 84 89 84 85V65" stroke="#DF465A" stroke-width="6"/>
+</svg>
