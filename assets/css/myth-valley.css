@@ -13,10 +13,12 @@ body {
 }
 
 main {
-    max-width: 1400px;
-    margin: 0 auto;
-    padding: 0 20px;
+    width: 100%;
+    margin: 0;
+    padding: 0;
 }
+
+
 
 /* Typography */
 h1, h2, h3 {
@@ -48,7 +50,9 @@ p {
 
 /* Sections */
 .mv-section {
-    margin-bottom: 6rem;
+    max-width: 1200px;
+    margin: 0 auto 6rem;
+    padding: 0 60px;
 }
 
 /* Intro & Inspiration Grid */
