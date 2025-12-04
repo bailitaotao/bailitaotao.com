@@ -2,234 +2,290 @@
 <html lang="en">
 
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Myth Valley - Timothy's Website</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Myth Valley - Timothy's Website</title>
   <link rel="icon" href="/favicon.ico" type="image/x-icon">
   <link rel="icon" href="/assets/icon/logo-tao.svg" type="image/svg+xml">
   <link rel="shortcut icon" href="/assets/icon/logo-tao.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="/assets/icon/logo-tao-apple-touch-icon.png">
-	<link rel="stylesheet" href="/assets/css/style.css">
-	<link rel="stylesheet" href="/assets/css/myth-valley.css">
-	<script src="/assets/js/main.js"></script>
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="stylesheet" href="/assets/css/myth-valley.css">
+  <script src="/assets/js/main.js"></script>
 </head>
 
 <body>
-	<!-- Shared nav will be injected here -->
-	<div id="nav-container"></div>
+  <!-- Shared nav will be injected here -->
+  <div id="nav-container"></div>
 
-	<main>
-	<!-- Game Cover Section -->
-	<div class="game-cover-container">
-		<video id="cover-video" src="/assets/games/myth-valley/myth-valley-cover.webm" autoplay muted playsinline></video>
+  <main>
+    <!-- Game Cover Section -->
+    <div class="game-cover-container">
+      <video id="cover-video" src="/assets/games/myth-valley/myth-valley-cover.webm" autoplay muted playsinline></video>
 
-		<!-- Scroll Indicator -->
-		<div class="scroll-indicator">
-			<span>Scroll Down</span>
-			<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-				<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
-			</svg>
-		</div>
+      <!-- Scroll Indicator -->
+      <div class="scroll-indicator">
+        <span>Scroll Down</span>
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+        </svg>
+      </div>
 
-		<!-- Video Controls -->
-		<div class="video-controls">
-			<button id="videoReplayButton" class="video-control-button" aria-label="Replay video" title="Replay">
-				<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
-				</svg>
-			</button>
-			<button id="videoMuteButton" class="video-control-button muted" aria-label="Toggle mute" title="Mute">
-				<svg class="icon-unmuted" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z" />
-				</svg>
-				<svg class="icon-muted" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z" clip-rule="evenodd" />
-					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2" />
-				</svg>
-			</button>
-		</div>
-	</div>
+      <!-- Video Controls -->
+      <div class="video-controls">
+        <button id="videoReplayButton" class="video-control-button" aria-label="Replay video" title="Replay">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+          </svg>
+        </button>
+        <button id="videoMuteButton" class="video-control-button muted" aria-label="Toggle mute" title="Mute">
+          <svg class="icon-unmuted" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+            stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z" />
+          </svg>
+          <svg class="icon-muted" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+            stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z"
+              clip-rule="evenodd" />
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M17 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2" />
+          </svg>
+        </button>
+      </div>
+    </div>
 
-	<!-- Introduction & Inspiration -->
-	<section class="mv-section">
-		<div class="intro-grid">
-			<div class="intro-text-col">
-				<h2>INTRODUCTION</h2>
-				<p>Venture into a realm where the world is a canvas and the mist is its ink. Guided by the principles of Eastern aesthetics, we shape a reality from the power of silhouettes and the depth of atmosphere. Ancient gates stand as stark outlines against a grey sky, and solitary temples emerge from the swirling fog like memories. This is a journey through a world that values suggestion over statement, tranquility over turmoil. What secrets will you find etched in the shadows and whispered on the wind?</p>
-				
-				<h2>INSPIRATION</h2>
-				<p>Inspired by the recent hit "Black Myth: Wukong" and the profound artistic conception outlined by the minimalist contours in traditional Chinese ink paintings, they extensively use silhouettes of mountains, architecture, and vegetation to shape the layers and narrative of the imagery. My goal is to blend the simple beauty of outlines with the hazy sensation of mist, creating a truly captivating ancient Eastern world.</p>
-				
-				<h2>MOODBOARD</h2>
-				<div class="moodboard-grid">
-					<img src="/assets/games/myth-valley/moodboard-00001.webp" alt="Moodboard 1">
-					<img src="/assets/games/myth-valley/moodboard-00002.webp" alt="Moodboard 2">
-					<img src="/assets/games/myth-valley/moodboard-00003.webp" alt="Moodboard 3">
-					<img src="/assets/games/myth-valley/moodboard-00004.webp" alt="Moodboard 4">
-				</div>
-			</div>
-			
-			<div class="intro-visuals-col">
-				<img src="/assets/games/myth-valley/blender.webp" alt="Color Analysis" style="width: 100%; margin-bottom: 1rem; border-radius: 4px;">
-				<p style="margin-bottom: 2rem;">Also I used Blender to analyze the distribution of each pixel in the color sphere (with a hue wheel and a saturation z axis) from the reference images of Black Myth: Wukong, and visualize the composition of all the colors. Providing a foundational reference to grading the lighting system I’ll do in UE later.</p>
-				
-				<h2>SKETCH</h2>
-				<div class="sketch-grid">
-					<img src="/assets/games/myth-valley/sketch-00001.webp" alt="Sketch 1">
-					<img src="/assets/games/myth-valley/sketch-00002.webp" alt="Sketch 4">
-					<img src="/assets/games/myth-valley/sketch-00003.webp" alt="Sketch 5">
-					<img src="/assets/games/myth-valley/sketch-00004.webp" alt="Sketch 6">
-				</div>
-			</div>
-		</div>
-	</section>
+    <!-- Introduction & Inspiration -->
+    <section class="mv-section">
+      <div class="intro-grid">
+        <div class="intro-text-col">
+          <h2>INTRODUCTION</h2>
+          <p>Venture into a realm where the world is a canvas and the mist is its ink. Guided by the principles of
+            Eastern aesthetics, we shape a reality from the power of silhouettes and the depth of atmosphere. Ancient
+            gates stand as stark outlines against a grey sky, and solitary temples emerge from the swirling fog like
+            memories. This is a journey through a world that values suggestion over statement, tranquility over turmoil.
+            What secrets will you find etched in the shadows and whispered on the wind?</p>
 
-	<!-- Procession Overview -->
-	<section class="mv-section">
-		<h2>PROCESSION</h2>
-		<div class="procession-steps">
-			<div class="step-card">
-				<div class="step-number">1</div>
-				<img src="/assets/games/myth-valley/build-white-box00001.webp" alt="Build Whitebox">
-				<p>Build whitebox of the terrain in UE5 based on the sketch above.</p>
-			</div>
-			<div class="step-card">
-				<div class="step-number">2</div>
-				<img src="/assets/games/myth-valley/geae-00001.webp" alt="Create Terrain">
-				<p>Create detailed terrain in Gaea, then export height maps of different layers to provide essentials for the blending terrain textures which will build in UE.</p>
-			</div>
-			<div class="step-card">
-				<div class="step-number">3</div>
-				<img src="/assets/games/myth-valley/lightning-00001.webp" alt="Lighting">
-				<p>Lightning the scene. Using Ultra Dynamic Sky Plugin to create clouds with a rich sense of layering, Adjust the properties and colors of sunlight and volumetric fog to create an atmosphere similar to the reference image.</p>
-			</div>
-			<div class="step-card">
-				<div class="step-number">4</div>
-				<img src="/assets/games/myth-valley/model-optimization-00001.webp" alt="Assets">
-				<p>Place architectural assets and some trees that affects the composition of the scene. Using plant brush in foliage mode to create the remaining vegetation. Add fog, to create a sense of mystery, tranquility, and grandeur.</p>
-			</div>
-		</div>
-	</section>
+          <h2>INSPIRATION</h2>
+          <p>Inspired by the recent hit "Black Myth: Wukong" and the profound artistic conception outlined by the
+            minimalist contours in traditional Chinese ink paintings, they extensively use silhouettes of mountains,
+            architecture, and vegetation to shape the layers and narrative of the imagery. My goal is to blend the
+            simple beauty of outlines with the hazy sensation of mist, creating a truly captivating ancient Eastern
+            world.</p>
 
-	<!-- Procession 01 -->
-	<section class="mv-section">
-		<h2>PROCESSION 01</h2>
-		
-		<h3>Build White Box</h3>
-		<div class="process-detail-grid">
-			<div>
-				<img src="/assets/games/myth-valley/build-white-box00001.webp" class="full-width-img" alt="White Box 1">
-			</div>
-			<div>
-				<img src="/assets/games/myth-valley/build-white-box00002.webp" class="full-width-img" alt="White Box 2">
-				<p style="margin-top: 1rem;">When creating the white box scene, I enhanced the sense of hierarchy through using foreground, middle ground, and background, with backlight makes the edges more distinct, performing a strong sense of spatial depth.</p>
-			</div>
-		</div>
+          <h2>MOODBOARD</h2>
+          <div class="moodboard-grid">
+            <img src="/assets/games/myth-valley/moodboard-00001.webp" alt="Moodboard 1">
+            <img src="/assets/games/myth-valley/moodboard-00002.webp" alt="Moodboard 2">
+            <img src="/assets/games/myth-valley/moodboard-00003.webp" alt="Moodboard 3">
+            <img src="/assets/games/myth-valley/moodboard-00004.webp" alt="Moodboard 4">
+          </div>
+        </div>
 
-		<h3>Create Terrain by GAEA</h3>
-		<div class="process-detail-grid">
-			<div>
-				<img src="/assets/games/myth-valley/geae-00001.webp" class="full-width-img" alt="Gaea 1">
-				<p>To build the blending terrain textures, I used GAEA to procedurally generate the landscape and export a series of texture maps. My process began by establishing the terrain's foundational shapes using Mountain and Ridge nodes. To introduce naturalistic complexity, these shapes were then processed through Fold, Canyonizer, and Erosion nodes to simulate the effects of geological activity and weathering.</p>
-			</div>
-			<div>
-				<img src="/assets/games/myth-valley/geae-00002.webp" class="full-width-img" alt="Gaea 2">
-				<p>To build the blending terrain textures later in UE, I used GAEA to export height maps with separate nodes.</p>
-			</div>
-		</div>
+        <div class="intro-visuals-col">
+          <img src="/assets/games/myth-valley/blender.webp" alt="Color Analysis"
+            style="width: 100%; margin-bottom: 1rem; border-radius: 4px;">
+          <p style="margin-bottom: 2rem;">Also I used Blender to analyze the distribution of each pixel in the color
+            sphere (with a hue wheel and a saturation z axis) from the reference images of Black Myth: Wukong, and
+            visualize the composition of all the colors. Providing a foundational reference to grading the lighting
+            system I’ll do in UE later.</p>
 
-		<h3>Edit Terrain in UE</h3>
-		<div class="process-detail-grid">
-			<div>
-				<img src="/assets/games/myth-valley/edit-terrain-00001.webp" class="full-width-img" alt="Edit Terrain 1">
-			</div>
-			<div>
-				<img src="/assets/games/myth-valley/edit-terrain-00002.webp" class="full-width-img" alt="Edit Terrain 2">
-				<p>The blending material uses the exported Erosion and Soil maps as masks to blend various PBR materials, such as rock and moss, to create a natural and layered surface. Guided by the camera angle, I sculpted additional details precisely where needed.</p>
-			</div>
-		</div>
+          <h2>SKETCH</h2>
+          <div class="sketch-grid">
+            <img src="/assets/games/myth-valley/sketch-00001.webp" alt="Sketch 1">
+            <img src="/assets/games/myth-valley/sketch-00002.webp" alt="Sketch 4">
+            <img src="/assets/games/myth-valley/sketch-00003.webp" alt="Sketch 5">
+            <img src="/assets/games/myth-valley/sketch-00004.webp" alt="Sketch 6">
+          </div>
+        </div>
+      </div>
+    </section>
 
-		<h3>Lighting</h3>
-		<div class="process-detail-grid">
-			<div>
-				<img src="/assets/games/myth-valley/lightning-00001.webp" class="full-width-img" alt="Lighting 1">
-			</div>
-			<div>
-				<img src="/assets/games/myth-valley/lightning-00002.webp" class="full-width-img" alt="Lighting 2">
-				<p>I am heavily inspired by the ethereal atmosphere of "Black Myth: Wukong" and the unique climate of Southern China's coastal hills when casting the light. To capture the region's mist-shrouded, otherworldly feel, I utilized the Ultra Dynamic Sky plugin to generate dense, layered clouds and pervasive volumetric fog. The color grading leans towards a cool, desaturated cyan-blue palette, simulating the diffused light of an overcast, rainy day. The use of strong backlighting casts the mountains and temple into sharp silhouettes. Enhances the scene's contrast and depth.</p>
-			</div>
-		</div>
-	</section>
+    <!-- Procession Overview -->
+    <section class="mv-section">
+      <h2>PROCESSION</h2>
+      <div class="procession-steps">
+        <div class="step-card">
+          <div class="step-number">1</div>
+          <img src="/assets/games/myth-valley/build-white-box00001.webp" alt="Build Whitebox">
+          <p>Build whitebox of the terrain in UE5 based on the sketch above.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-number">2</div>
+          <img src="/assets/games/myth-valley/geae-00001.webp" alt="Create Terrain">
+          <p>Create detailed terrain in Gaea, then export height maps of different layers to provide essentials for the
+            blending terrain textures which will build in UE.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-number">3</div>
+          <img src="/assets/games/myth-valley/lightning-00001.webp" alt="Lighting">
+          <p>Lightning the scene. Using Ultra Dynamic Sky Plugin to create clouds with a rich sense of layering, Adjust
+            the properties and colors of sunlight and volumetric fog to create an atmosphere similar to the reference
+            image.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-number">4</div>
+          <img src="/assets/games/myth-valley/model-optimization-00001.webp" alt="Assets">
+          <p>Place architectural assets and some trees that affects the composition of the scene. Using plant brush in
+            foliage mode to create the remaining vegetation. Add fog, to create a sense of mystery, tranquility, and
+            grandeur.</p>
+        </div>
+      </div>
+    </section>
 
-	<!-- Procession 02 -->
-	<section class="mv-section">
-		<h2>PROCESSION 02</h2>
-		
-		<h3>Model Optimization & Details Adjustment</h3>
-		<div class="process-detail-grid">
-			<div>
-				<img src="/assets/games/myth-valley/model-optimization-00001.webp" class="full-width-img" alt="Optimization 1">
-				<img src="/assets/games/myth-valley/model-optimization-00003.webp" class="full-width-img" alt="Optimization 3" style="margin-top: 1rem;">
-				<p style="margin-top: 1rem;">Next, I focused on replacing placeholder assets with high-fidelity models. For the core temple architecture, I used the architecture by unpacking the assets from "Black Myth: Wukong". These high-precision models replaced the main white box structures. For the natural environment, I utilized the FAB plugin within the Unreal Marketplace to select high-quality free vegetation assets, which replaced the initial placeholder geometry and populated the scene with organic detail.</p>
-			</div>
-			<div>
-				<div class="gallery-grid">
-					<img src="/assets/games/myth-valley/model-optimization-00004.webp" alt="Optimization 4">
-					<img src="/assets/games/myth-valley/model-optimization-00005.webp" alt="Optimization 5">
-				</div>
-				<img src="/assets/games/myth-valley/model-optimization-00006.webp" class="full-width-img" alt="Optimization 6">
-				<p>To enhance the details, I began by painting grass on the landscape. To ensure visual cohesion, I modified the grass material to seamlessly integrate it with the environment. Furthermore, I placed some key foreground assets like branches, skeleton & swords. Strengthens the composition by adding such crucial layers of depth.</p>
-			</div>
-		</div>
+    <!-- Procession 01 -->
+    <section class="mv-section">
+      <h2>PROCESSION 01</h2>
 
-		<h3>Atmosphere & Fog</h3>
-		<div class="process-detail-grid">
-			<div>
-				<img src="/assets/games/myth-valley/model-optimization-00007.webp" class="full-width-img" alt="Fog 1">
-				<img src="/assets/games/myth-valley/model-optimization-00008.webp" class="full-width-img" alt="Fog 2">
-			</div>
-			<div>
-				<p>Atmosphere is paramount in Eastern aesthetic, and fog is the most important stuff for it. Fog can simplifies scenes and transforms mountains and architecture into silhouettes.</p>
-				<p>I used fog sheets from the Easy Fog plugin. These fog can soften the transition between the terrain and the sky, wrap around the bases of mountains, and create distinct layers between different elements. This layering technique breaks up sightlines, deepens the composition, and ultimately crafts the ethereal, tranquil, and authentically Chinese atmosphere that was the core vision of the project.</p>
-				<div class="gallery-grid">
-					<img src="/assets/games/myth-valley/model-optimization-00009.webp" alt="Fog 3">
-					<img src="/assets/games/myth-valley/model-optimization-00010.webp" alt="Fog 4">
-				</div>
-			</div>
-		</div>
-	</section>
+      <h3>Build White Box</h3>
+      <div class="process-detail-grid">
+        <div>
+          <img src="/assets/games/myth-valley/build-white-box00001.webp" class="full-width-img" alt="White Box 1">
+        </div>
+        <div>
+          <img src="/assets/games/myth-valley/build-white-box00002.webp" class="full-width-img" alt="White Box 2">
+          <p style="margin-top: 1rem;">When creating the white box scene, I enhanced the sense of hierarchy through
+            using foreground, middle ground, and background, with backlight makes the edges more distinct, performing a
+            strong sense of spatial depth.</p>
+        </div>
+      </div>
 
-	<!-- Animation & VFX -->
-	<section class="mv-section">
-		<h2>Animation & VFX</h2>
-		<div class="animation-grid">
-			<div>
-				<img src="/assets/games/myth-valley/animation-00001.webp" class="full-width-img" alt="Animation 1">
-				<img src="/assets/games/myth-valley/animation-00002.webp" class="full-width-img" alt="Animation 2">
-				<p style="margin-top: 1rem;">First, I created a gentle animation for the temple bell. Rigging the bell asset with skeleton and then making a looping animation curve to simulate its gentle sway in the breeze. After that, I added circling birds. To optimize performance, I choose to use a VFX instead of the traditional animated meshes.</p>
-			</div>
-			<div>
-				<img src="/assets/games/myth-valley/animation-00005.webp" class="full-width-img" alt="Animation 5">
-				<img src="/assets/games/myth-valley/animation-00003.webp" class="full-width-img" alt="Animation 3">
-				<p style="margin-top: 1rem;">By using the Optimization Viewmodes in UE, performance optimization can be achieved by removing lights and vegetation that have minimal impact on the visuals.</p>
-				<p>Finally, I placed cameras and created a level sequences, making final adjustments based on composition such as details of grass and lighting before rendering.</p>
-			</div>
-		</div>
-	</section>
+      <h3>Create Terrain by GAEA</h3>
+      <div class="process-detail-grid">
+        <div>
+          <img src="/assets/games/myth-valley/geae-00001.webp" class="full-width-img" alt="Gaea 1">
+          <p>To build the blending terrain textures, I used GAEA to procedurally generate the landscape and export a
+            series of texture maps. My process began by establishing the terrain's foundational shapes using Mountain
+            and Ridge nodes. To introduce naturalistic complexity, these shapes were then processed through Fold,
+            Canyonizer, and Erosion nodes to simulate the effects of geological activity and weathering.</p>
+        </div>
+        <div>
+          <img src="/assets/games/myth-valley/geae-00002.webp" class="full-width-img" alt="Gaea 2">
+          <p>To build the blending terrain textures later in UE, I used GAEA to export height maps with separate nodes.
+          </p>
+        </div>
+      </div>
 
-	<!-- Final Display -->
-	<section class="mv-section">
-		<h2>Final Display</h2>
-		<div class="final-display">
-			<img src="/assets/games/myth-valley/final-display-00001.webp" alt="Final Display 1">
-			<img src="/assets/games/myth-valley/final-display-00002.webp" alt="Final Display 2">
-		</div>
-	</section>
+      <h3>Edit Terrain in UE</h3>
+      <div class="process-detail-grid">
+        <div>
+          <img src="/assets/games/myth-valley/edit-terrain-00001.webp" class="full-width-img" alt="Edit Terrain 1">
+        </div>
+        <div>
+          <img src="/assets/games/myth-valley/edit-terrain-00002.webp" class="full-width-img" alt="Edit Terrain 2">
+          <p>The blending material uses the exported Erosion and Soil maps as masks to blend various PBR materials, such
+            as rock and moss, to create a natural and layered surface. Guided by the camera angle, I sculpted additional
+            details precisely where needed.</p>
+        </div>
+      </div>
 
-	</main>
+      <h3>Lighting</h3>
+      <div class="process-detail-grid">
+        <div>
+          <img src="/assets/games/myth-valley/lightning-00001.webp" class="full-width-img" alt="Lighting 1">
+        </div>
+        <div>
+          <img src="/assets/games/myth-valley/lightning-00002.webp" class="full-width-img" alt="Lighting 2">
+          <p>I am heavily inspired by the ethereal atmosphere of "Black Myth: Wukong" and the unique climate of Southern
+            China's coastal hills when casting the light. To capture the region's mist-shrouded, otherworldly feel, I
+            utilized the Ultra Dynamic Sky plugin to generate dense, layered clouds and pervasive volumetric fog. The
+            color grading leans towards a cool, desaturated cyan-blue palette, simulating the diffused light of an
+            overcast, rainy day. The use of strong backlighting casts the mountains and temple into sharp silhouettes.
+            Enhances the scene's contrast and depth.</p>
+        </div>
+      </div>
+    </section>
 
-	<!-- Footer -->
-	<div id="footer-container"></div>
+    <!-- Procession 02 -->
+    <section class="mv-section">
+      <h2>PROCESSION 02</h2>
+
+      <h3>Model Optimization & Details Adjustment</h3>
+      <div class="process-detail-grid">
+        <div>
+          <img src="/assets/games/myth-valley/model-optimization-00001.webp" class="full-width-img"
+            alt="Optimization 1">
+          <img src="/assets/games/myth-valley/model-optimization-00003.webp" class="full-width-img" alt="Optimization 3"
+            style="margin-top: 1rem;">
+          <p style="margin-top: 1rem;">Next, I focused on replacing placeholder assets with high-fidelity models. For
+            the core temple architecture, I used the architecture by unpacking the assets from "Black Myth: Wukong".
+            These high-precision models replaced the main white box structures. For the natural environment, I utilized
+            the FAB plugin within the Unreal Marketplace to select high-quality free vegetation assets, which replaced
+            the initial placeholder geometry and populated the scene with organic detail.</p>
+        </div>
+        <div>
+          <div class="gallery-grid">
+            <img src="/assets/games/myth-valley/model-optimization-00004.webp" alt="Optimization 4">
+            <img src="/assets/games/myth-valley/model-optimization-00005.webp" alt="Optimization 5">
+          </div>
+          <img src="/assets/games/myth-valley/model-optimization-00006.webp" class="full-width-img"
+            alt="Optimization 6">
+          <p>To enhance the details, I began by painting grass on the landscape. To ensure visual cohesion, I modified
+            the grass material to seamlessly integrate it with the environment. Furthermore, I placed some key
+            foreground assets like branches, skeleton & swords. Strengthens the composition by adding such crucial
+            layers of depth.</p>
+        </div>
+      </div>
+
+      <h3>Atmosphere & Fog</h3>
+      <div class="process-detail-grid">
+        <div>
+          <img src="/assets/games/myth-valley/model-optimization-00007.webp" class="full-width-img" alt="Fog 1">
+          <img src="/assets/games/myth-valley/model-optimization-00008.webp" class="full-width-img" alt="Fog 2">
+        </div>
+        <div>
+          <p>Atmosphere is paramount in Eastern aesthetic, and fog is the most important stuff for it. Fog can
+            simplifies scenes and transforms mountains and architecture into silhouettes.</p>
+          <p>I used fog sheets from the Easy Fog plugin. These fog can soften the transition between the terrain and the
+            sky, wrap around the bases of mountains, and create distinct layers between different elements. This
+            layering technique breaks up sightlines, deepens the composition, and ultimately crafts the ethereal,
+            tranquil, and authentically Chinese atmosphere that was the core vision of the project.</p>
+          <div class="gallery-grid">
+            <img src="/assets/games/myth-valley/model-optimization-00009.webp" alt="Fog 3">
+            <img src="/assets/games/myth-valley/model-optimization-00010.webp" alt="Fog 4">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Animation & VFX -->
+    <section class="mv-section">
+      <h2>Animation & VFX</h2>
+      <div class="animation-grid">
+        <div>
+          <img src="/assets/games/myth-valley/animation-00001.webp" class="full-width-img" alt="Animation 1">
+          <img src="/assets/games/myth-valley/animation-00002.webp" class="full-width-img" alt="Animation 2">
+          <p style="margin-top: 1rem;">First, I created a gentle animation for the temple bell. Rigging the bell asset
+            with skeleton and then making a looping animation curve to simulate its gentle sway in the breeze. After
+            that, I added circling birds. To optimize performance, I choose to use a VFX instead of the traditional
+            animated meshes.</p>
+        </div>
+        <div>
+          <img src="/assets/games/myth-valley/animation-00005.webp" class="full-width-img" alt="Animation 5">
+          <img src="/assets/games/myth-valley/animation-00003.webp" class="full-width-img" alt="Animation 3">
+          <p style="margin-top: 1rem;">By using the Optimization Viewmodes in UE, performance optimization can be
+            achieved by removing lights and vegetation that have minimal impact on the visuals.</p>
+          <p>Finally, I placed cameras and created a level sequences, making final adjustments based on composition such
+            as details of grass and lighting before rendering.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Final Display -->
+    <section class="mv-section">
+      <h2>Final Display</h2>
+      <div class="final-display">
+        <img src="/assets/games/myth-valley/final-display-00001.webp" alt="Final Display 1">
+        <img src="/assets/games/myth-valley/final-display-00002.webp" alt="Final Display 2">
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <div id="footer-container"></div>
 
 </body>
 
