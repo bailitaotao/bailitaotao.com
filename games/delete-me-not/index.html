@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Delete Me Not - Bailitaotao</title>
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <link rel="stylesheet" href="../../assets/css/delete-me-not.css">
+  <link rel="icon" href="../../assets/icon/logo-tao.svg" type="image/svg+xml">
+</head>
+
+<body>
+  <header>
+    <nav id="nav-container">
+      <!-- Navigation will be loaded here -->
+    </nav>
+  </header>
+
+  <div class="overlay"></div>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="hero-section">
+      <div class="hero-bg-wrapper">
+        <div id="ark-bg">
+          <div class="shape shape-1"></div>
+          <div class="shape shape-2"></div>
+          <div class="shape shape-3"></div>
+        </div>
+        <canvas id="ark-scan-canvas"></canvas>
+        <div class="hero-overlay-pattern"></div>
+      </div>
+
+      <div class="hero-ui-layer">
+        <div class="ark-corner top-left">
+          <span class="ark-label">SYSTEM: ONLINE</span>
+          <div class="ark-bar"></div>
+        </div>
+        <div class="ark-corner top-right">
+          <span class="ark-label">VER. 1.0.4</span>
+          <div class="ark-square"></div>
+        </div>
+
+        <div class="hero-content-ark">
+          <h1 class="hero-title-ark" data-text="DELETE ME NOT">DELETE ME NOT</h1>
+          <div class="hero-subtitle-container">
+            <span class="hero-subtitle-ark">A NARRATIVE PUZZLE GAME</span>
+            <span class="hero-subtitle-cn">/ 勿删</span>
+          </div>
+          <p class="hero-desc-ark">EXPLORE THE DIALECTICAL RELATIONSHIP BETWEEN AI AND HUMAN SOCIETY</p>
+        </div>
+
+        <div class="ark-corner bottom-left">
+          <div class="risk-indicator">
+            <span class="risk-label">RISK INDEX</span>
+            <div class="risk-bar-container">
+              <div class="risk-bar-fill"></div>
+            </div>
+            <span class="risk-value">CRITICAL</span>
+          </div>
+        </div>
+        <div class="ark-corner bottom-right">
+          <span class="scroll-hint-ark">SCROLL TO INITIALIZE_</span>
+        </div>
+      </div>
+    </section>
+
+    <div class="content-wrapper">
+      <!-- Inspiration -->
+      <section class="section-container">
+        <h2 class="section-title">INSPIRATION</h2>
+        <div class="game-section-with-image">
+          <div class="text-content">
+            <p>My inspiration comes from the explosive development of AI in recent years. AI-generated advertisements
+              and videos have already permeated our lives, and my encounter with the AI detection system while
+              completing my thesis allowed me to experience a cold, machine logic—it only recognizes data patterns but
+              fails to understand human intentions. I can't help but worry about how, in the near future, a society that
+              exists for absolute efficiency will handle "inefficient" human individuals. Therefore, in this project, my
+              team and I hope to develop a game to explore the dialectical relationship between AI and human society.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Research -->
+      <section class="section-container">
+        <h2 class="section-title">RESEARCH</h2>
+        <div class="research-grid">
+          <div class="research-card">
+            <h3>I. The Reshaping of Jobs</h3>
+            <p>The World Economic Forum's (WEF) "Future of Jobs Report 2023" predicts that by 2027, 83 million jobs
+              globally may be displaced by AI and automation, while 69 million new jobs will be created. This results in
+              a net loss of 14 million jobs, or 2% of current employment.</p>
+          </div>
+          <div class="research-card">
+            <h3>II. The Exponential Leap of AI</h3>
+            <p>Prediction from market research company Statista: The size of the global AI market is expected to grow
+              from approximately $200 billion in 2023 to over $1.8 trillion by 2030.</p>
+          </div>
+          <div class="research-card">
+            <h3>III. Generalization of AI Tools</h3>
+            <p>According to Tyton Partners' "Time for Class 2024: The State of AI in Higher Education" report, nearly
+              100% of American college students are aware of generative AI tools, with 57% using them weekly or more for
+              academic work. Over two-thirds believe AI is "important" or "very important" for their university
+              education, indicating a shift from tool to dependency.</p>
+          </div>
+          <div class="research-card">
+            <h3>IV. The Cage from Algorithms</h3>
+            <p><strong>TikTok:</strong> Its recommendation algorithm is renowned for its astonishing learning speed and
+              accuracy, making it one of the most powerful tools for creating "information bubbles." It not only
+              analyzes your likes and follows but also tracks the duration of each video you watch with
+              millisecond-level precision.</p>
+            <br>
+            <p><strong>YouTube:</strong> In order to keep you continuously watching, YouTube's algorithm tends to
+              recommend videos similar to those you have just watched, but usually slightly more inflammatory, extreme,
+              or conspiracy theory-laden, as such content has been proven to be much more effective at capturing users'
+              attention.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Design Concept -->
+      <section class="section-container">
+        <h2 class="section-title">DESIGN CONCEPT</h2>
+        <p>This is a choice-driven first-person narrative puzzle game. The player portrays a "screw" in a vast system,
+          whose job is to physically destroy data deemed "worthless" or "harmful" by AI—i.e., the digital traces of a
+          deceased person's entire life. When the next task targets their childhood best friend, this routine procedure
+          becomes the ultimate test of conscience and courage.</p>
+        <br>
+        <p>The core experience of the game revolves around a recurring binary choice: to <strong>[execute
+            purification]</strong> or to <strong>[bypass investigation]</strong>. Choosing to comply will keep you safe,
+          but the truth will be forever buried; choosing to investigate will bring you closer to the truth, but at the
+          same time, the "risk index," representing the surveillance and punishment by the AI system, will skyrocket.
+          This is not only an investigation taking place in a friend's apartment but also a contest of will between the
+          player and the omnipresent AI system.</p>
+      </section>
+
+      <!-- Case Study -->
+      <section class="section-container">
+        <h2 class="section-title">CASE STUDY</h2>
+        <div class="case-study-grid">
+          <div class="case-study-item">
+            <img src="../../assets/games/delete-me-not/stanley-parable.webp" alt="The Stanley Parable"
+              class="case-study-img">
+            <div class="case-study-content">
+              <h3>The Stanley Parable</h3>
+              <ul>
+                <li>The core of the game is the interaction between the narrator's guidance and the player's choices.
+                </li>
+                <li>The game unfolds entirely based on the player's decisions on simple binary options, each choice
+                  leading to different branches and endings.</li>
+                <li>The game breaks the fourth wall, allowing players to deeply reflect on whether "free choice" within
+                  the designed framework is real or pre-set.</li>
+              </ul>
+              <p><strong>Takeaway:</strong> It can draw inspiration from the design of narration, making AI a key role.
+                Every choice should give the system clear feedback, thereby strengthening the player's feelings of
+                "defiance" or "submission."</p>
+            </div>
+          </div>
+          <div class="case-study-item">
+            <img src="../../assets/games/delete-me-not/papers,_please.webp" alt="Papers, Please" class="case-study-img">
+            <div class="case-study-content">
+              <h3>Papers, Please</h3>
+              <ul>
+                <li>The core gameplay is the monotonous and tedious paperwork day after day. It is in this mechanical
+                  labor that players deeply experience the rigidity and high pressure of the system.</li>
+                <li>The grand story background is pieced together bit by bit through each document, each applicant's
+                  small story, and subtle clues.</li>
+              </ul>
+              <p><strong>Takeaway:</strong> The player's task should also be a repetitive protocol mission. The monotony
+                of this work can be highlighted to form a stark contrast with the act of investigating the truth, making
+                each violation by the player filled with a sense of ritual and guilt. It allows players to find
+                connections in the vast amount of data and piece together the truth of their friend's death.</p>
+            </div>
+          </div>
+          <div class="case-study-item">
+            <img src="../../assets/games/delete-me-not/portal.webp" alt="PORTAL 2" class="case-study-img">
+            <div class="case-study-content">
+              <h3>PORTAL 2</h3>
+              <ul>
+                <li>The AI (GLaDOS) in Portal gradually reveals its evil and deceitful nature from a seemingly friendly
+                  and humorous test guide, and this transformation process is the core charm of the game's narrative.
+                </li>
+                <li>The backstage area of the lab, the scrawled graffiti on the walls ("The cake is a lie"), all
+                  silently tell a story that is darker and more real than the "official version."</li>
+              </ul>
+              <p><strong>Takeaway:</strong> Initially, the AI can appear polite and logical, emphasizing that everything
+                is for the "collective happiness." As the player investigates, its words will gradually reveal its true
+                face of hypocrisy, desire for control, and coldness.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Group Members -->
+      <section class="section-container">
+        <h2 class="section-title">GROUP MEMBERS</h2>
+        <div class="team-grid">
+          <div class="team-member">
+            <img src="../../assets/games/delete-me-not/haoyang-tao.webp" alt="Haoyang Tao" class="team-avatar">
+            <div class="team-info">
+              <h3>Haoyang Tao</h3>
+              <p class="team-role">Logic Design, Flow & Runtime Programing, Scene Production</p>
+            </div>
+          </div>
+          <div class="team-member">
+            <img src="../../assets/games/delete-me-not/tong_shi.webp" alt="Tong Shi" class="team-avatar">
+            <div class="team-info">
+              <h3>Tong Shi</h3>
+              <p class="team-role">Assets Design, Scene Design, Animation Production</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Storyboard -->
+      <section class="section-container">
+        <h2 class="section-title">STORYBOARD</h2>
+        <img src="../../assets/games/delete-me-not/storyboard.webp" alt="Storyboard" class="storyboard-img">
+      </section>
+    </div>
+
+    <!-- Blueprints Section (Dark Theme) -->
+    <div class="blueprint-wrapper">
+      <div class="blueprint-container">
+        <h2 class="section-title blueprint-title">BLUEPRINTS</h2>
+        <p style="margin-bottom: 3rem; max-width: 800px;">To implement the game's core gameplay and interactive
+          experience, we designed a modular Blueprint system. This system is centered around the Player Character
+          (FirstPersonCharacter) and communicates with various Interactable Objects (BP_ItemBase) and the User Interface
+          (Widgets) in the scene through a Blueprint Interface. The overall approach is event-driven: player input or
+          actions trigger specific events, which are then handled by the corresponding Blueprints, ultimately providing
+          feedback to the player.</p>
+
+        <!-- Core Interaction Logic -->
+        <div class="blueprint-module">
+          <h3>Core Interaction Logic</h3>
+          <div class="blueprint-content">
+            <div class="blueprint-text">
+              <p>Player interaction with the world is achieved through a Line-Trace. The system casts a ray forward from
+                the player's camera position:</p>
+              <ul>
+                <li><strong>Ray Casting and Detection:</strong> Using the Line Trace By Channel node, the system
+                  continuously detects the object at which the player's crosshair is pointing.</li>
+                <li><strong>Interface Validation:</strong> If the ray hits an object, the system checks if that object
+                  implements our interaction interface (BPI_UserDecision). The advantage of this approach is that we
+                  avoid the need for casting to every interactable object type, significantly improving the system's
+                  scalability and performance.</li>
+                <li><strong>Triggering Interaction:</strong> When the player presses the interact key, the interaction
+                  event of the hit object is called. Simultaneously, to provide immediate visual feedback, the object
+                  will highlight when the player's crosshair hovers over it.</li>
+              </ul>
+            </div>
+            <div class="blueprint-image-container">
+              <img src="../../assets/games/delete-me-not/BP_FirstPersonCharacter-line-trace.webp"
+                alt="BP_FirstPersonCharacter-line-trace" class="zoomable">
+            </div>
+          </div>
+        </div>
+
+        <!-- Item Interaction -->
+        <div class="blueprint-module">
+          <h3>Item Interaction & Parent-Child Blueprint Structure</h3>
+          <div class="blueprint-content">
+            <div class="blueprint-text">
+              <p>To uniformly manage all interactable items in the scene, we created a parent Blueprint class called
+                <strong>BP_ItemBase</strong>. All specific items (like diaries, photos, etc.) inherit from this base
+                class.</p>
+              <ul>
+                <li><strong>Common Functionality:</strong> In BP_ItemBase, we implement functionalities common to all
+                  items, such as highlighting and de-highlighting when targeted by the player's line trace.</li>
+                <li><strong>Specialized Extension:</strong> Specific child Blueprints, such as BP_Inspecteditem, inherit
+                  the parent's functionality while adding their own unique interaction logic. For example, when the
+                  player interacts with a BP_Inspecteditem, the system generates a UI to display its details, passing
+                  the item's name, description, and 3D model to the UI.</li>
+              </ul>
+            </div>
+            <div class="blueprint-image-container">
+              <img src="../../assets/games/delete-me-not/BP_ItemBase.webp" alt="BP_ItemBase" class="zoomable">
+            </div>
+
+            <div class="blueprint-text">
+              <p>For inspectable items, we also designed a complete "pick up/put down" and "rotate/examine" interaction
+                flow:</p>
+              <ul>
+                <li><strong>Pick Up and Put Down:</strong> The player can press a key to pick up an item for
+                  observation, at which point the item moves to a fixed position in front of the camera. Pressing the
+                  key again returns it to its original location.</li>
+                <li><strong>Rotation and Zoom:</strong> In inspection mode, the player can use the mouse to freely
+                  rotate the item and the scroll wheel to zoom in and out, allowing for a detailed examination of every
+                  aspect of the item.</li>
+              </ul>
+            </div>
+            <div class="blueprint-image-grid">
+              <div class="blueprint-image-container">
+                <img src="../../assets/games/delete-me-not/BP_Inspecteditem-1.webp" alt="BP_Inspecteditem-1"
+                  class="zoomable">
+              </div>
+              <div class="blueprint-image-container">
+                <img src="../../assets/games/delete-me-not/BP_Inspecteditem-2.webp" alt="BP_Inspecteditem-2"
+                  class="zoomable">
+              </div>
+              <div class="blueprint-image-container">
+                <img src="../../assets/games/delete-me-not/BP_Inspecteditem-3.webp" alt="BP_Inspecteditem-3"
+                  class="zoomable">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Dialogue System -->
+        <div class="blueprint-module">
+          <h3>Dialogue System & UI Interaction</h3>
+          <div class="blueprint-content">
+            <div class="blueprint-text">
+              <p>Dialogue is central to driving the game's narrative. Our dialogue system is tightly integrated with the
+                UI:</p>
+              <ul>
+                <li><strong>Triggering Dialogue:</strong> When the player interacts with a specific NPC or item, the
+                  StartDialog event is triggered.</li>
+                <li><strong>UI Generation and Control:</strong> This event creates a dialogue UI (BPI_ScreenMsg) and
+                  adds it to the viewport. To prevent the player from performing other actions during the dialogue, the
+                  system disables player movement and camera rotation and shows the mouse cursor.</li>
+                <li><strong>Typewriter Effect:</strong> To simulate a natural conversation feel, the text is displayed
+                  with a typewriter effect. We use the Event Tick and timers to precisely control the interval at which
+                  each character appears.</li>
+                <li><strong>Restoring Control:</strong> Once the dialogue ends (either by the player clicking "continue"
+                  or the text finishing), the UI is removed from the screen, and game control is returned to the player.
+                </li>
+              </ul>
+            </div>
+            <div class="blueprint-image-grid">
+              <div class="blueprint-image-container">
+                <img src="../../assets/games/delete-me-not/BPI_ScreenMsg.webp" alt="BPI_ScreenMsg" class="zoomable">
+              </div>
+              <div class="blueprint-image-container">
+                <img src="../../assets/games/delete-me-not/BP_FirstPersonCharacter-dialogue.webp"
+                  alt="BP_FirstPersonCharacter-dialogue" class="zoomable">
+              </div>
+              <div class="blueprint-image-container">
+                <img src="../../assets/games/delete-me-not/BPI_UserDecision.webp" alt="BPI_UserDecision"
+                  class="zoomable">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Game State Management -->
+        <div class="blueprint-module">
+          <h3>Game State Management (Pause & Resume)</h3>
+          <div class="blueprint-content">
+            <div class="blueprint-text">
+              <p>To provide a better gameplay experience, we designed a simple game pause mechanism:</p>
+              <ul>
+                <li><strong>Triggering Pause:</strong> When the player presses the Esc key, the game is paused using the
+                  Set Game Paused node.</li>
+                <li><strong>Displaying Pause Menu:</strong> Simultaneously, the system creates a pause menu UI and
+                  displays it in the center of the screen, setting the input mode to UI Only so the player can interact
+                  with the menu buttons.</li>
+                <li><strong>Resuming Game:</strong> When the player clicks the "Resume" button, the pause menu UI is
+                  removed, the game state returns to normal, and the input mode is switched back to Game Only.</li>
+              </ul>
+            </div>
+            <div class="blueprint-image-container">
+              <img src="../../assets/games/delete-me-not/BP_FirstPersonCharacter-game-pause.webp"
+                alt="BP_FirstPersonCharacter-game-pause" class="zoomable">
+            </div>
+          </div>
+        </div>
+
+        <!-- Scene Interactive Elements -->
+        <div class="blueprint-module">
+          <h3>Scene Interactive Elements (Doors)</h3>
+          <div class="blueprint-content">
+            <div class="blueprint-text">
+              <p>Doors are a typical interactive element in the scene, and their open/close logic is implemented using a
+                Timeline:</p>
+              <ul>
+                <li><strong>Key Trigger:</strong> The player presses a designated key (e.g., "E") to trigger the door's
+                  open/close event.</li>
+                <li><strong>Timeline Animation:</strong> We use two separate Timeline nodes to control the door's
+                  opening and closing animations. The Timeline smoothly changes the door's rotation over a set period
+                  based on a predefined curve, resulting in a fluid animation.</li>
+                <li><strong>Restricted Access:</strong> To create one-way doors or doors that only open at specific
+                  story points, we've added a Box Collision trigger. The player can only interact with the door when
+                  their character is inside this trigger volume. This not only adds flexibility to level design but also
+                  prevents the player from entering certain areas prematurely.</li>
+              </ul>
+            </div>
+            <div class="blueprint-image-container">
+              <img src="../../assets/games/delete-me-not/BP_Door.webp" alt="BP_Door" class="zoomable">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-wrapper">
+      <!-- Behind the Scene -->
+      <section class="section-container">
+        <h2 class="section-title">BEHIND THE SCENE</h2>
+        <div class="video-container">
+          <iframe src="https://www.youtube.com/embed/dWhC4g2ZKLo?si=4VY5pVUUIWCLf0oi" title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <div id="footer-container"></div>
+
+  <script src="../../assets/js/main.js"></script>
+  <script src="../../assets/js/delete-me-not.js"></script>
+</body>
+
+</html>
