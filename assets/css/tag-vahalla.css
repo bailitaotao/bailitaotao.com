@@ -29,10 +29,20 @@ body {
 	outline: 0;
 	box-shadow: none;
 	background-color: transparent;
+}
+
+.tv-cover::before {
+	content: "";
+	position: absolute;
+	inset: 0;
 	background-image: url("/assets/games/tag-valhalla/cover.webp");
-	/* Slight overscan to avoid any baked-in edge/border pixels in exported assets */
-	background-size: 102% 102%;
+	background-size: cover;
 	background-position: center;
+	background-repeat: no-repeat;
+	/* Overscan without aspect distortion (avoids baked-in edge pixels) */
+	transform: scale(1.02);
+	transform-origin: center;
+	z-index: 0;
 }
 
 .tv-cover::after {
