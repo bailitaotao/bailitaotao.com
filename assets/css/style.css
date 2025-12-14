@@ -347,16 +347,25 @@ a.inline-link:hover {
 
 .carousel-track-wrapper {
   width: 100%;
-  overflow: hidden;
+  overflow-x: auto;
+  overflow-y: hidden;
   position: relative;
-  padding: 2rem 0;
+  padding: 2rem calc(50% - 150px);
+  -webkit-overflow-scrolling: touch;
+  touch-action: pan-x;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE/Edge Legacy */
+}
+
+.carousel-track-wrapper::-webkit-scrollbar {
+  display: none; /* Chrome/Safari */
 }
 
 .carousel-track {
   display: flex;
   transition: transform 0.6s cubic-bezier(0.25, 0.1, 0.25, 1);
   gap: 2rem;
-  padding: 0 calc(50% - 150px);
+  width: max-content;
 }
 
 .carousel-item {
@@ -526,8 +535,11 @@ a.inline-link:hover {
   }
   
   .carousel-track {
-    padding: 0 calc(50% - 100px);
     gap: 1rem;
+  }
+
+  .carousel-track-wrapper {
+    padding: 2rem calc(50% - 100px);
   }
   
   .carousel-btn {

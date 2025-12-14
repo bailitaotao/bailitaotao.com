@@ -122,12 +122,13 @@ document.addEventListener("DOMContentLoaded", () => {
   // Carousel functionality
   const initCarousel = () => {
     const track = document.querySelector(".carousel-track");
+    const trackWrapper = document.querySelector(".carousel-track-wrapper");
     const items = document.querySelectorAll(".carousel-item");
     const prevBtn = document.querySelector(".carousel-btn-prev");
     const nextBtn = document.querySelector(".carousel-btn-next");
     const indicators = document.querySelectorAll(".carousel-indicator");
     
-    if (!track || !items.length) return;
+    if (!track || !trackWrapper || !items.length) return;
 
     let currentIndex = 0;
     let autoPlayInterval = null;
@@ -142,44 +143,40 @@ document.addEventListener("DOMContentLoaded", () => {
       return itemWidth + gap;
     };
 
+    const clampIndex = (index) => {
+      if (index < 0) return 0;
+      if (index > items.length - 1) return items.length - 1;
+      return index;
+    };
+
+    const updateActiveStates = () => {
+      items.forEach((item, index) => {
+        if (index === currentIndex) item.classList.add("active");
+        else item.classList.remove("active");
+      });
+
+      indicators.forEach((indicator, index) => {
+        if (index === currentIndex) indicator.classList.add("active");
+        else indicator.classList.remove("active");
+      });
+    };
+
     const updateCarousel = (animate = true) => {
-      if (!animate) {
-        track.style.transition = "none";
-      }
-      
       // 使用动态计算的宽度
       const itemWidth = getItemWidth();
-      const offset = -currentIndex * itemWidth;
-      track.style.transform = `translateX(${offset}px)`;
-      
-      // Update active states
-      items.forEach((item, index) => {
-        if (index === currentIndex) {
-          item.classList.add("active");
-        } else {
-          item.classList.remove("active");
-        }
-      });
+      const left = currentIndex * itemWidth;
 
-      // Update indicators
-      indicators.forEach((indicator, index) => {
-        if (index === currentIndex) {
-          indicator.classList.add("active");
-        } else {
-          indicator.classList.remove("active");
-        }
-      });
-
-      // Re-enable transition after a frame
-      if (!animate) {
-        requestAnimationFrame(() => {
-          track.style.transition = "";
-        });
+      if (typeof trackWrapper.scrollTo === "function") {
+        trackWrapper.scrollTo({ left, behavior: animate ? "smooth" : "auto" });
+      } else {
+        trackWrapper.scrollLeft = left;
       }
+
+      updateActiveStates();
     };
 
     const goToSlide = (index, animate = true) => {
-      currentIndex = (index + items.length) % items.length;
+      currentIndex = clampIndex((index + items.length) % items.length);
       updateCarousel(animate);
     };
 
@@ -233,6 +230,35 @@ document.addEventListener("DOMContentLoaded", () => {
       carouselContainer.addEventListener("mouseenter", stopAutoPlay);
       carouselContainer.addEventListener("mouseleave", startAutoPlay);
     }
+
+    // Sync active state with manual horizontal scroll
+    let scrollRaf = null;
+    let scrollEndTimeout = null;
+    const handleScroll = () => {
+      if (scrollRaf) cancelAnimationFrame(scrollRaf);
+      scrollRaf = requestAnimationFrame(() => {
+        const itemWidth = getItemWidth();
+        if (!itemWidth) return;
+        const nextIndex = clampIndex(Math.round(trackWrapper.scrollLeft / itemWidth));
+        if (nextIndex !== currentIndex) {
+          currentIndex = nextIndex;
+          updateActiveStates();
+        }
+      });
+
+      stopAutoPlay();
+      clearTimeout(scrollEndTimeout);
+      scrollEndTimeout = setTimeout(() => {
+        startAutoPlay();
+      }, 1200);
+    };
+    trackWrapper.addEventListener("scroll", handleScroll, { passive: true });
+
+    // Stop autoplay while user is actively interacting (touch/drag)
+    const onPointerDown = () => stopAutoPlay();
+    const onPointerUp = () => startAutoPlay();
+    trackWrapper.addEventListener("pointerdown", onPointerDown, { passive: true });
+    window.addEventListener("pointerup", onPointerUp, { passive: true });
 
     // Keyboard navigation
     document.addEventListener("keydown", (e) => {
