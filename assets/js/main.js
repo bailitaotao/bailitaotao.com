@@ -25,24 +25,13 @@ document.addEventListener("DOMContentLoaded", () => {
   };
 
   const initNavBehavior = () => {
-    const dropdowns = document.querySelectorAll(".has-dropdown");
     const header = document.querySelector("header");
     const overlay = document.querySelector(".overlay");
-    if (!dropdowns.length || !header || !overlay) return;
+    const dropdowns = document.querySelectorAll(".has-dropdown");
+    const topLevelNavItems = document.querySelectorAll("header nav > ul > li");
+    if (!header || !overlay || !topLevelNavItems.length) return;
 
     let activeDropdown = null;
-
-    dropdowns.forEach(dropdown => {
-      dropdown.addEventListener("mouseenter", () => {
-        if (activeDropdown) dropdowns.forEach(d => d.classList.add("no-transition"));
-        dropdowns.forEach(d => d.classList.remove("active"));
-        dropdown.classList.add("active");
-        overlay.classList.add("active");
-        header.classList.add("solid");
-        activeDropdown = dropdown;
-        if (dropdowns.length > 1) setTimeout(() => dropdowns.forEach(d => d.classList.remove("no-transition")), 50);
-      });
-    });
 
     const closeAllDropdowns = () => {
       dropdowns.forEach(d => d.classList.remove("active"));
@@ -50,6 +39,37 @@ document.addEventListener("DOMContentLoaded", () => {
       header.classList.remove("solid");
       activeDropdown = null;
     };
+
+    const openDropdown = (dropdown) => {
+      if (!dropdown) return;
+
+      // If switching between dropdowns, temporarily disable transitions to prevent jitter.
+      if (activeDropdown && activeDropdown !== dropdown) {
+        dropdowns.forEach(d => d.classList.add("no-transition"));
+      }
+
+      dropdowns.forEach(d => d.classList.remove("active"));
+      dropdown.classList.add("active");
+      overlay.classList.add("active");
+      header.classList.add("solid");
+      activeDropdown = dropdown;
+
+      if (dropdowns.length > 1) {
+        setTimeout(() => dropdowns.forEach(d => d.classList.remove("no-transition")), 50);
+      }
+    };
+
+    // Hovering any top-level tab should either open its dropdown (if any)
+    // or close the currently open dropdown (e.g., moving from GAMES -> PHOTOS).
+    topLevelNavItems.forEach(item => {
+      item.addEventListener("mouseenter", () => {
+        if (item.classList.contains("has-dropdown")) {
+          openDropdown(item);
+        } else if (activeDropdown) {
+          closeAllDropdowns();
+        }
+      });
+    });
 
     header.addEventListener("mouseleave", closeAllDropdowns);
     window.addEventListener("wheel", () => { if (activeDropdown) closeAllDropdowns(); }, { passive: true });
