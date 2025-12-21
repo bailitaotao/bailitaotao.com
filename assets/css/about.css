@@ -1,0 +1,156 @@
+.games-section {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 3rem 2rem;
+}
+
+.games-section h2 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: var(--color-accent);
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.game-category {
+  margin-bottom: 4rem;
+}
+
+.game-category h3 {
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+  color: var(--color-text-dark);
+  border-left: 4px solid var(--color-accent);
+  padding-left: 1rem;
+}
+
+.game-grid {
+  display: grid;
+  gap: 1.5rem;
+}
+
+/* PC Games: 5 columns on large screens */
+.game-grid.pc-games {
+  grid-template-columns: repeat(5, 1fr);
+}
+
+/* Mobile Games: 5 columns */
+.game-grid.mobile-games {
+  grid-template-columns: repeat(5, 1fr);
+}
+
+.game-grid.mobile-games .game-item {
+  width: 56.25%; /* Match height of PC games (16:9) when square */
+  margin: 0 auto;
+  border-radius: 22%; /* iOS-style rounded corners */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.game-grid.mobile-games .game-item::before {
+  padding-top: 100%; /* 1:1 Aspect Ratio */
+}
+
+/* Arcade Games: Single item, centered and limited width */
+.game-grid.arcade-games {
+  display: block;
+}
+
+.game-grid.arcade-games .game-item {
+  width: 100%;
+  max-width: 500px; /* Limit max width */
+  margin: 0 auto; /* Center the image */
+  border-radius: 0;
+  box-shadow: none;
+  background-color: transparent;
+}
+
+.game-grid.arcade-games .game-item::before {
+  display: none; /* Remove aspect ratio hack */
+}
+
+.game-grid.arcade-games .game-item img {
+  position: static;
+  height: auto;
+  width: 100%;
+  max-width: 100%;
+}
+
+.game-grid.arcade-games .game-item:hover {
+  transform: scale(1.02);
+}
+
+.game-item {
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background-color: #f0f0f0; /* Placeholder background */
+  position: relative;
+}
+
+/* Enforce aspect ratio to keep grid uniform */
+.game-item::before {
+  content: "";
+  display: block;
+  padding-top: 56.25%; /* 16:9 Aspect Ratio */
+}
+
+.game-item img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.game-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  z-index: 2;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .game-grid.pc-games,
+  .game-grid.mobile-games {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .game-grid.pc-games,
+  .game-grid.mobile-games {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .game-grid.arcade-games .game-item {
+    width: 100%;
+  }
+}
+
+/* Game Tooltip */
+.game-tooltip {
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  padding: 10px 15px;
+  border-radius: 12px;
+  font-size: 0.9rem;
+  max-width: 250px;
+  pointer-events: none; /* Don't interfere with mouse events */
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.2s ease;
+  z-index: 10000;
+  line-height: 1.4;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(10px);
+}
+
+.game-tooltip.visible {
+  opacity: 1;
+  visibility: visible;
+}
+
