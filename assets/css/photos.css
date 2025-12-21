@@ -24,6 +24,29 @@ body {
   opacity: 1;
 }
 
+.loading-message {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  font-family: var(--font-main);
+  font-size: 1.2rem;
+  text-align: center;
+  z-index: 100;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.loading-message.visible {
+  opacity: 1;
+}
+
+.loading-message.hidden {
+  opacity: 0 !important;
+  pointer-events: none;
+}
+
 .photo-item {
   position: absolute;
   top: 0;

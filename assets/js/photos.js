@@ -99,6 +99,14 @@ document.addEventListener('DOMContentLoaded', () => {
       };
     });
     
+    // Show loading message after 0.5s delay
+    setTimeout(() => {
+      const loadingMessage = document.getElementById('loading-message');
+      if (loadingMessage && !loadingMessage.classList.contains('hidden')) {
+        loadingMessage.classList.add('visible');
+      }
+    }, 500);
+
     photoWall.classList.add('ready');
   }
 
@@ -106,6 +114,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const colCount = getColumnCount();
     const wallWidth = photoWall.offsetWidth;
     const colWidth = wallWidth / colCount;
+    const loadingMessage = document.getElementById('loading-message');
     
     // Initialize column heights
     const colHeights = new Array(colCount).fill(0);
@@ -138,6 +147,10 @@ document.addEventListener('DOMContentLoaded', () => {
       // Show image
       if (!img.classList.contains('visible')) {
         img.classList.add('visible');
+        // Hide loading message when first image is visible
+        if (loadingMessage && !loadingMessage.classList.contains('hidden')) {
+          loadingMessage.classList.add('hidden');
+        }
       }
 
       // Update column height
