@@ -11,8 +11,10 @@
   <link rel="apple-touch-icon" href="/assets/icon/logo-tao-apple-touch-icon.webp">
   <link rel="stylesheet" href="/assets/css/style.css">
   <link rel="stylesheet" href="/assets/css/about.css">
+  <link rel="stylesheet" href="/assets/css/i18n.css">
   <script src="/assets/js/main.js"></script>
   <script src="/assets/js/about.js" defer></script>
+  <script src="/assets/js/i18n.js" defer></script>
 </head>
 
 <body>
@@ -25,14 +27,47 @@
         <img src="/assets/about/tlipoca.webp" alt="Tlipoca">
       </div>
       <div class="experience">
-        <h2>The Real Me</h2>
-        <p>オタク | Developer | INTP | 二次元 | Photographer</p>
-        <br>
-        <p>Welcome to my portfolio. I am passionate about creating immersive experiences through games and capturing moments through photography.</p>
-        <br>
-        <p>下面是我非常非常喜欢且推荐的游戏，可以把鼠标悬停在上面看我的锐评</p>
-        <br>
-        <p>Here are the games I highly highly love & recommend. Hover your mouse over them to see my top takes.</p>
+        <div class="experience-header">
+          <h2>The Real Me</h2>
+          <div class="lang-switch">
+            <button class="lang-btn active" data-lang="zh">中</button>
+            <button class="lang-btn" data-lang="en">En</button>
+            <button class="lang-btn" data-lang="ja">日</button>
+          </div>
+        </div>
+
+        <!-- Chinese Content -->
+        <div class="lang-content active" data-lang="zh">
+          <p class="tags">死宅 | 码农 | INTP | 二次元 | 摄影 | 书法 | 作曲</p>
+          <div class="intro-text">
+            <p>Ciallo～(∠・ω< )⌒☆ 欢迎光临！鄙人不善言辞，且将满腹诚意，尽付于这方寸网页之间</p>
+          </div>
+          <div class="recommendation-text">
+            <p>下面是我非常非常喜欢且推荐的游戏，可以把鼠标悬停在上面看我的锐评</p>
+          </div>
+        </div>
+
+        <!-- English Content -->
+        <div class="lang-content" data-lang="en">
+          <p class="tags">Otaku | Dev | INTP | ACG | Photography | Calligraphy | Composition</p>
+          <div class="intro-text">
+            <p>Ciallo～(∠・ω< )⌒☆ Welcome to my site! I am a man (might be) of few words, but you will find my heart poured into these few pages.</p>
+          </div>
+          <div class="recommendation-text">
+            <p>Below are the games I highly highly love & recommend. Hover your mouse over them to see my top takes.</p>
+          </div>
+        </div>
+
+        <!-- Japanese Content -->
+        <div class="lang-content" data-lang="ja">
+          <p class="tags">オタク | プログラマー | INTP | 二次元 | 写真 | 書道 | 作曲</p>
+          <div class="intro-text">
+            <p>Ciallo～(∠・ω< )⌒☆ ようこそ！口下手な私ですが、この小さなWebページに誠意を込めています。</p>
+          </div>
+          <div class="recommendation-text">
+            <p>以下は私が大好きで強くお勧めするゲームです。マウスを合わせると私のコメントが見られます。</p>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -42,23 +77,23 @@
       <div class="game-category">
         <h3>PC Games</h3>
         <div class="game-grid pc-games">
-          <div class="game-item" data-description="Overwatch + PUBG -- a nice fps game but poorly managed."><img src="/assets/about/pc-games/apex-legend.webp" alt="Apex Legends"></div>
+          <div class="game-item" data-description="It tasete like Overwatch combined with PUBG - a nice fps game but poorly managed."><img src="/assets/about/pc-games/apex-legend.webp" alt="Apex Legends"></div>
           <div class="game-item" data-description="I've loved playing SimCity on my iPod touch since I'm 8. The numerical design is awesome. Every time I messed up my city, I would ask my mom to help me play (Shouldn't expect too much from a primary school student). She's a stock market expert, so she could easily turn the finance problem into good situation. Back to the point—Skylines is more of a true sim, which is exactly what I need now that I’m older."><img src="/assets/about/pc-games/cities-skyline-2.webp" alt="Cities: Skylines II"></div>
-          <div class="game-item" data-description="The graphics are probably the best among all games since 2020. Nowadays, most devs are too lazy to optimize—their games look mediocre but eat up so many resources. Huge props to CDPR. Even thought it was basically an unfinished mess when it first dropped, but it's still a masterpiece despite the flaws."><img src="/assets/about/pc-games/cyberpunk-2077.webp" alt="Cyberpunk 2077"></div>
+          <div class="game-item" data-description="The graphics are probably the best among all games since 2020. Nowadays, most devs are too lazy to optimize their games look mediocre but eat up so many resources. Huge props to CDPR. Even thought it was basically an unfinished mess when it first dropped, but it's still a masterpiece despite the flaws."><img src="/assets/about/pc-games/cyberpunk-2077.webp" alt="Cyberpunk 2077"></div>
           <div class="game-item" data-description="Solitude, life, reincarnation, and connection—this has to be the most polarizing game ever. If you can't settle in and really feel the story, it's just a boring &quot;delivery sim.&quot I'm usually a wimp when it comes to horror things, but the horror elements in Death Stranding don't scare me at all. That's because the core of the story is all about finding hope in isolation and reconnecting people."><img src="/assets/about/pc-games/death-stranding-director's-cut.webp" alt="Death Stranding Director's Cut"></div>
-          <div class="game-item" data-description="Forza Horizon 5: Your ultimate Horizon adventure awaits! Explore the vibrant and ever-evolving open world landscapes of Mexico."><img src="/assets/about/pc-games/forza-horizen-5.webp" alt="Forza Horizon 5"></div>
-          <div class="game-item" data-description="Grand Theft Auto V: When a young street hustler, a retired bank robber and a terrifying psychopath find themselves entangled with some of the most frightening and deranged elements of the underworld."><img src="/assets/about/pc-games/grand-theft-auto-v.webp" alt="Grand Theft Auto V"></div>
-          <div class="game-item" data-description="Microsoft Flight Simulator: From light planes to wide-body jets, fly highly detailed and accurate aircraft in the next generation of Microsoft Flight Simulator."><img src="/assets/about/pc-games/microsoft-flight-simulator.webp" alt="Microsoft Flight Simulator"></div>
+          <div class="game-item" data-description="Merging sim-racing with an open-world sandbox was an absolute stroke of genius — it opened up endless gameplay possibilities. I'm super hyped for a Japan-based Horizon 6. I can't wait to see how JDM culture takes this game into the next level."><img src="/assets/about/pc-games/forza-horizen-5.webp" alt="Forza Horizon 5"></div>
+          <div class="game-item" data-description="San Andreas was my childhood. It's where I first learned about American culture. Now, after 10 years of roaming Los Santos, every street in Los'Angeles feels like home. Huge shoutout to Rockstar for a decade of updates and great optimization. 2026 can't come soon enough. GTA VI is going to be legendary.""><img src="/assets/about/pc-games/grand-theft-auto-v.webp" alt="Grand Theft Auto V"></div>
+          <div class="game-item" data-description="It helps me mastered the Airbus A320 and a handful of light props. This game is more than just a flight sim — allowing me to explore the world's diverse natural landscapes right from my home. It's also my version of a Pomodoro timer. Starting a long-haul flight, and let the white noise of the engines create a space for me to focus on my own work."><img src="/assets/about/pc-games/microsoft-flight-simulator.webp" alt="Microsoft Flight Simulator"></div>
           <div class="game-item" data-description="No words needed—the greatest sandbox out there, period. ( ) It's also a perfect showcase of the internet spirit—a thriving community where you can become a creator of mods, shaders, or texture packs. You actually pick up a ton of game dev skills and under-the-hood principles along the way."><img src="/assets/about/pc-games/minecraft.webp" alt="Minecraft"></div>
           <div class="game-item" data-description="⁺✞ʚ升天ɞ✟₊🧬( ⁎ᵕᴗᵕ⁎ )🧬⁺✞ʚ升天ɞ✟₊"><img src="/assets/about/pc-games/needy-girl-overdose.webp" alt="Needy Girl Overdose"></div>
-          <div class="game-item" data-description="No Man's Sky: Inspired by the adventure and imagination that we love from classic science-fiction, No Man's Sky presents you with a galaxy to explore."><img src="/assets/about/pc-games/no-man's-sky.webp" alt="No Man's Sky"></div>
+          <div class="game-item" data-description="8 quintillion planets, zero loading screens, and a shared universe. This is a milestone in game design. Even a flood couldn't stop them from delivering the seamless space sim we were all dreaming of. Massive respect to Hello Games for the endless free DLCs. Truly the gold standard for player trust."><img src="/assets/about/pc-games/no-man's-sky.webp" alt="No Man's Sky"></div>
         </div>
       </div>
 
       <div class="game-category">
         <h3>Mobile Games</h3>
         <div class="game-grid mobile-games">
-          <div class="game-item" data-description="Arknights: A strategy RPG with a fantasy theme. Take on the role of a key member of Rhodes Island, a pharmaceutical company that fights both a deadly infection and the unrest it leaves in its wake."><img src="/assets/about/moblie-games/arknights.webp" alt="Arknights"></div>
+          <div class="game-item" data-description="The definitive #1 mobile game. Even against the newest open-world titles, its unique tower defense gameplay and stunningly original art direction help it stand out. Everything from the UI to the OST feels intentional and immersive. A true masterpiece that sets the bar for the entire industry."><img src="/assets/about/moblie-games/arknights.webp" alt="Arknights"></div>
           <div class="game-item" data-description="Clash of Clans: Join millions of players worldwide as you build your village, raise a clan, and compete in epic Clan Wars!"><img src="/assets/about/moblie-games/clash-of-clans.webp" alt="Clash of Clans"></div>
           <div class="game-item" data-description="Clash Royale: Enter the Arena! From the creators of Clash of Clans comes a real-time multiplayer game starring the Royales, your favorite Clash characters and much, much more."><img src="/assets/about/moblie-games/clash-royal.webp" alt="Clash Royale"></div>
           <div class="game-item" data-description="Project Sekai: A rhythm game featuring Hatsune Miku and her virtual friends."><img src="/assets/about/moblie-games/pjsk.webp" alt="Project Sekai"></div>

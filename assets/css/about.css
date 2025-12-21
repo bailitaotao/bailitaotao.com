@@ -154,3 +154,34 @@
   visibility: visible;
 }
 
+/* Experience Section Typography */
+.experience .tags {
+  font-weight: 500;
+  color: var(--color-text-gray);
+  margin-bottom: 2rem;
+  letter-spacing: 0.05em;
+  font-size: 1.1rem;
+}
+
+.experience .intro-text {
+  margin-bottom: 2.5rem;
+}
+
+.experience .intro-text p {
+  margin-bottom: 1rem;
+  line-height: 1.8;
+  font-size: 1.05rem;
+}
+
+.experience .recommendation-text {
+  padding-top: 1rem;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.experience .recommendation-text p {
+  margin-bottom: 0.5rem;
+  color: var(--color-text-gray);
+  font-size: 0.95rem;
+  font-style: italic;
+}
+
