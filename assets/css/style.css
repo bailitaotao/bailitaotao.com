@@ -186,6 +186,19 @@ body.announcement-visible .content-wrapper {
   padding-top: calc(var(--header-height) + var(--announcement-height) + var(--spacing-standard));
 }
 
+/* Anchor offset for hash navigation (fixed header / announcement banner) */
+:root {
+  --anchor-offset: calc(var(--header-height) + var(--spacing-standard));
+}
+
+body.announcement-visible {
+  --anchor-offset: calc(var(--header-height) + var(--announcement-height) + var(--spacing-standard));
+}
+
+.section-title[id] {
+  scroll-margin-top: var(--anchor-offset);
+}
+
 .content-wrapper {
   padding-top: calc(var(--header-height) + var(--spacing-standard));
   transition: padding-top var(--transition-fast);
