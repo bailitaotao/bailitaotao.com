@@ -17,7 +17,7 @@
   <div id="nav-container"></div>
 
   <div class="content-wrapper article-page">
-    <header class="article-hero">
+    <section class="article-hero">
       <div class="article-hero-decoration">
         <div class="article-corner article-corner-tl"></div>
         <div class="article-corner article-corner-tr"></div>
@@ -25,6 +25,9 @@
         <div class="article-corner article-corner-br"></div>
       </div>
       <div class="article-hero-content">
+        <nav class="article-breadcrumb">
+          <a href="/">Home</a> / <a href="/articles/">Articles</a>
+        </nav>
         <div class="article-top-ornament">
           <span class="article-ornament-diamond">◆</span>
           <span class="article-ornament-line"></span>
@@ -50,10 +53,24 @@
           <span>January 2026</span>
         </p>
       </div>
-    </header>
+    </section>
 
-    <main class="article-content">
-      <h2 id="section-1">一、玉玺体系总览与核心印文</h2>
+    <div class="article-body-container">
+      <aside class="article-toc">
+        <nav>
+          <h3>目录</h3>
+          <ul>
+            <li><a href="#section-1">一、玉玺体系总览与核心印文</a></li>
+            <li><a href="#section-2">二、传国玺与皇权</a></li>
+            <li><a href="#section-3">三、官印制度与国家治理</a></li>
+            <li><a href="#section-4">四、私印、鉴藏与文化表达</a></li>
+            <li><a href="#section-5">五、玉玺历史发展脉络</a></li>
+          </ul>
+        </nav>
+      </aside>
+
+      <main class="article-content">
+        <h2 id="section-1">一、玉玺体系总览与核心印文</h2>
       <p>中国历代玉玺不仅是皇权的象征，更是国家制度、文化思想与艺术工艺的集中体现。从西周至民国，玉玺的形制、印文与用途不断演变，形成了以"传国玺"为核心、官印为体系、私印与鉴藏玺为补充的完整印信系统。其中，<strong>"受命于天，既寿永昌"</strong> 作为最具代表性的印文，贯穿秦、唐、宋、金、明等多朝，成为皇权合法性的核心表述。清代乾隆时期厘定"二十五宝玺"，标志着玉玺制度的规范化与集大成。</p>
       <p>以下为具有代表性的玉玺印面信息概览，涵盖其名称、朝代、印文内容及图像，集中体现玉玺体系的核心特征与文化内涵。</p>
 
@@ -74,7 +91,7 @@
               <td>秦代</td>
               <td><strong>受命于天，既寿永昌</strong></td>
               <td>承受上天的命令，国运长久昌盛</td>
-              <td><img alt="传国玉玺印面拓片展现秦代篆书风貌" src="https://agent.qianwen.com/mos/0ec1f87054694011bee27bfc649be606/ec9573233183e840954d9e97564e9c2a"/></td>
+              <td><img alt="传国玉玺印面拓片展现秦代篆书风貌" src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/89/Inscription_on_Imperial_Seal_of_China_%22%E5%8F%97%E5%91%BD%E6%96%BC%E5%A4%A9_%E6%97%A2%E5%A3%BD%E6%B0%B8%E6%98%8C%22.svg/500px-Inscription_on_Imperial_Seal_of_China_%22%E5%8F%97%E5%91%BD%E6%96%BC%E5%A4%A9_%E6%97%A2%E5%A3%BD%E6%B0%B8%E6%98%8C%22.svg.png"/></td>
             </tr>
             <tr>
               <td>大清受命之宝</td>
@@ -320,7 +337,7 @@
           <div class="sequence-dot"></div>
           <div class="sequence-card">
             <div class="sequence-image">
-              <img alt="秦代传国玉玺：皇权合法性的奠基" loading="lazy" src="https://agent.qianwen.com/mos/0ec1f87054694011bee27bfc649be606/ec9573233183e840954d9e97564e9c2a"/>
+              <img alt="秦代传国玉玺：皇权合法性的奠基" loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/89/Inscription_on_Imperial_Seal_of_China_%22%E5%8F%97%E5%91%BD%E6%96%BC%E5%A4%A9_%E6%97%A2%E5%A3%BD%E6%B0%B8%E6%98%8C%22.svg/500px-Inscription_on_Imperial_Seal_of_China_%22%E5%8F%97%E5%91%BD%E6%96%BC%E5%A4%A9_%E6%97%A2%E5%A3%BD%E6%B0%B8%E6%98%8C%22.svg.png"/>
             </div>
             <div class="sequence-body">
               <h4 class="sequence-title">秦代传国玉玺：皇权合法性的奠基</h4>
@@ -429,8 +446,9 @@
         </div>
       </div>
     </main>
-  </div>
+  </div> <!-- end article-body-container -->
+</div> <!-- end content-wrapper -->
 
-  <div id="footer-container"></div>
+<div id="footer-container"></div>
 </body>
 </html>
